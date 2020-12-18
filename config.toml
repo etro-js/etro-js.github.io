@@ -15,3 +15,9 @@ theme = "juice"
 
 [extra]
 # Put all your custom variables here
+
+juice_logo_name = "Vidar"
+juice_logo_path = ""
+juice_extra_menu = [
+    { title = "Github", link = "https://github.com/clabe45/vidar"}
+]
