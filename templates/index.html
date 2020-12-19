@@ -1,0 +1,38 @@
+{% extends "juice/templates/index.html" %}
+{% block hero %}
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<section class="text-center">
+    <h1 class="heading-text" style="font-size: 50px">
+        Create videos with code.
+    </h1>
+    <h3 class="title-text">
+        Vidar is a JavaScript video-editing framework for the browser and Node
+    </h3>
+    <div>
+        <a class="github-button" href="https://github.com/clabe45/vidar" data-size="large" data-show-count="true"
+           aria-label="Star clabe45/vidar on GitHub">Star</a>
+        <a class="github-button" href="https://github.com/clabe45/vidar/fork" data-size="large"
+           data-show-count="true" aria-label="Fork clabe45/vidar on GitHub">Fork</a>
+    </div>
+</section>
+<img class="hero-image" style="width: 50%" src="{{ get_url(path="juice.svg") }}">
+
+<div class="explore-more text"
+    onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+    Explore More ⇩
+</div>
+<style>
+    .hero section {
+        padding: 0 5rem;
+    }
+    @media screen and (max-width: 768px) {
+        .hero section {
+            padding: 0 2rem;
+        }
+
+        .hero-image {
+            display: none
+        }
+    }
+</style>
+{% endblock hero %}
