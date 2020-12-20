@@ -19,6 +19,11 @@ npm i vidar
 
 # Usage
 
+Include it with
+```js
+<script src="node_modules/vidar/dist/vidar-iife.js"></script>
+```
+
 Let's look at an example:
 ```js
 var movie = new vd.Movie(outputCanvas)
