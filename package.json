@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/clabe45/vidar-site/issues"
   },
-  "homepage": "https://github.com/clabe45/vidar-site#readme"
+  "homepage": "https://github.com/clabe45/vidar-site#readme",
+  "dependencies": {
+    "jsdoc": "^3.6.6"
+  }
 }
