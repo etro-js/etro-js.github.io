@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: sudo apt install zola
+      - run: sudo apt install snapd
+      - run: snap install --edge zola
       - run: npm install
       - run: npm run build
