@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "zola build && jsdoc -r vidar/src -d public/docs/api -t node_modules/minami",
+    "build": "zola build && jsdoc -c jsdoc.conf.json -r vidar/src -d public/docs/api -t node_modules/minami",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
