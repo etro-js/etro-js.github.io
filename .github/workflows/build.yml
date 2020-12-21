@@ -1,0 +1,11 @@
+name: build
+on: [push]
+jobs:
+  default:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: sudo apt install zola
+      - run: npm install
+      - run: npm run build
