@@ -4,7 +4,7 @@ template = "page.html"
 +++
 
 **Guides:**
-- Read the [overview](docs/overview.md) to learn the fundamentals of
+- Read the [overview](overview.md) to learn the fundamentals of
   Vidar.
 
-[**API Reference**](docs/api)
+[**API Reference**](api)
