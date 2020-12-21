@@ -18,7 +18,7 @@ var movie = new vd.Movie(outputCanvas)
 
 You can provide an object of options to specify the audio context that will be
 used, as well as other properties. See the [`Movie`
-documentation](api/module-movie.Movie.html).
+documentation](../api/module-movie.Movie.html).
 
 The movie can then be played or recorded. Playing renders the movie to the
 canvas and audio context and can be interrupted with `pause`. Recording
