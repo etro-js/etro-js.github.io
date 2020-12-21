@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "doc": "rm -rf content/docs/api; npx jsdoc -r vidar/src -d content/docs/api",
+    "doc": "rm -rf content/docs/api; npx jsdoc -r vidar/src -d content/docs/api -t node_modules/minami",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
