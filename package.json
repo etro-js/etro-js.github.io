@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/clabe45/vidar-site#readme",
   "dependencies": {
-    "jsdoc": "^3.6.6"
+    "jsdoc": "^3.6.6",
+    "minami": "^1.2.3"
   }
 }
