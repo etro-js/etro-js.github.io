@@ -17,7 +17,8 @@ var movie = new vd.Movie(outputCanvas)
 ```
 
 You can provide an object of options to specify the audio context that will be
-used, as well as other properties. See the [`Movie` documentation](todo).
+used, as well as other properties. See the [`Movie`
+documentation](api/module-movie.Movie.html).
 
 The movie can then be played or recorded. Playing renders the movie to the
 canvas and audio context and can be interrupted with `pause`. Recording
@@ -43,7 +44,7 @@ movie.layers.push(layer1, layer2)  // the same as movie.addLayer
 # Effects
 
 Effects alter a layer or movie's output. Currently, only visual effects are
-supported. Audio can be manipulated using the [web audio API] (see docs; todo).
+supported. Audio can be manipulated using the [web audio API].
 Vidar offers a set of built-in effects:
 ```js
 var effect = new vd.effect.Contrast(2.0)
