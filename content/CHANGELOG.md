@@ -5,40 +5,48 @@ template = "page.html"
 
 <div class="heading-text">Changelog</div>
 
-# [Unreleased]
+# [0.8.0] - 2021.04.11
 ## Added
+- Type declarations.
+- `duration` option for `Movie#record`, to only record a subsection of the movie.
+- `'movie.recordended'` event. This does not affect the behavior of `'movie.ended'`.
 - Grayscale effect.
+- `vd.event.unsubscribe` to remove event listeners.
+- Image and video layers' `destX`, `destY`, `destWidth` and `destHeight`.
+  - Previously `imageX`, `imageY`, `imageWidth`, `imageHeight`, ...
+  - Allows for rotating these layers without cropping out parts.
 
 ## Changed
-- Rename `cctx` ('canvas context') to `vctx` ('visual context').
+- All constructor arguments are now supplied through an `options` object.
+- Now `Movie#record` also accepts its arguments through an `options` object.
+- Keyframes are now entered as `new vd.KeyFrame([time1, val1, interp],
+  [time2, val2])`
+- Rename `clip*` to `source*` for image layers.
+  - `clipX` is now `sourceX`, etc.
+- Rename `image` to `source` for image layers.
+- Rename `source` to `audioNode` and `media` to `source` for audio and video layers.
+  - And `mediaStartTime` to `sourceStartTime`
+- For image and video layers, `width` now defaults to `destWidth`, which defaults to `sourceWidth`, which defaults to the width of the image or video.
+- The `movie.audiodestinationupdate` event is now published on the movie instead of each layer.
+- The movie's `audioContext` option is now `actx` (to match the property).
 
-# [0.7.0] - 2020-12-17
-## Added
-- Importing with CommonJS syntax.
-- MIME type option for `record`.
-
-## Changed
-- Movies are no longer hidden and silent when exporting.
-- Media layers' audio nodes can now be reconnected to other audio nodes.
-- `refresh` can be called when the movie is playing or recording to force render.
+## Deprecated
+- `vd.mapPixels` - use `vd.effect.Shader` instead, because it supports
+  hardware-acceleration
+- `audioContext` option for `Movie` - use `actx` instead.
 
 ## Removed
-- Image layers' `imageX`, `imageY`, `imageWidth` and `imageHeight` properties. Every image is now rendered over its entire layer.
-- Video layers' `mediaX`, `mediaY`, `mediaWidth` and `mediaHeight` properties. Every video is now rendered over its entire layer.
+- Video files for examples (can now be downloaded with `npm run assets`).
 
 ## Fixed
-- Fix recording with only video or only audio.
-- Video layers' `clipWidth` and `clipHeight` are no longer treated as invalid options.
-- Image layers' `clipWidth` and `clipHeight` are no longer set in the constructor, so if the `clipWidth` option is not supplied and the layer's `width` changes `clipWidth` uses the new `width`.
-- Video and image layers' `width` and `height` default to their `clipWidth` and `clipHeight` respectively.
-- Elliptical mask effect throwing `TypeError: path.split is not a function`.
-- In shader effects, textures whose dimensions are not powers of two accept interpolation filters.
-- No longer ignore video layers' `mediaWidth` option.
-- Treat layers' `enabled` property as dynamic (allowing for keyframes and functions).
-- Make each media layer's duration depend on its playback rate.
-
-## Security
-- Update vulnerable dependencies.
+- Browsers that do not implement `AudioContext` are now supported.
+- Movie not rendering with no layers.
+- Issues with modifying `Movie#layers` and `Movie#effects`.
+- Layers no longer error on 'movie.seek' event.
+- Property filters' `this` is now set to the owner of the property.
+- Visual layers' `width` and `height` property filters now default to the movie's width and height.
+- Visual layers' `border` property not being processed correctly.
+- Effects' and layers' `attach()` and `detach()` methods not being called when replaced by another effect or layer.
 
 # [0.6.0] - 2019-12-26
 ## Added
@@ -140,7 +148,8 @@ template = "page.html"
   - Gaussian blur
   - Transform
 
-[Unreleased]: https://github.com/clabe45/vidar/compare/v0.7...HEAD
+[Unreleased]: https://github.com/clabe45/vidar/compare/v0.8...HEAD
+[0.8.0]: https://github.com/clabe45/vidar/compare/v0.7...v0.8
 [0.7.0]: https://github.com/clabe45/vidar/compare/v0.6...v0.7
 [0.6.0]: https://github.com/clabe45/vidar/compare/v0.5...v0.6
 [0.5.0]: https://github.com/clabe45/vidar/compare/v0.4...v0.5

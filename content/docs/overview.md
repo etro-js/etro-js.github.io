@@ -11,23 +11,21 @@ with a list of effects.
 
 # Movie
 
-To create a movie that will render to `outputCanvas`:
+To create a movie that will render to the <canvas> `outputCanvas`:
 ```js
-var movie = new vd.Movie(outputCanvas)
+var movie = new vd.Movie({ canvas: outputCanvas })
 ```
 
-You can provide an object of options to specify the audio context that will be
-used, as well as other properties. See the [`Movie`
-documentation](../api/module-movie.Movie.html).
-
 The movie can then be played or recorded. Playing renders the movie to the
-canvas and audio context and can be interrupted with `pause`. Recording
-renders the movie and saves the result as a video blob.
+canvas and audio context, and it can be interrupted with `pause`. Recording
+renders the movie and saves the result to a video blob.
 ```js
 movie.play()
 // or
-movie.record().then(blob => /*do something with blob*/)
+movie.record({ frameRate: 30 }).then(blob => /*do something with `blob`*/)
 ```
+
+See the [`Movie` documentation](../api/classes/movie.html).
 
 # Layers
 
@@ -35,25 +33,29 @@ Layers are pieces of content for the movie, such as video and audio clips and
 titles:
 ```js
 // The base visual layer renders a solid rectangle filling its bounds
-var layer1 = new vd.layer.Visual(startTime, htmlVideoEl)
+var layer1 = new vd.layer.Visual({ startTime: 0, duration: 3 })
 // The video layer extends the visual layer and renders an html video element
-var layer2 = new vd.layer.Video(startTime, htmlVideoEl)
-movie.layers.push(layer1, layer2)  // the same as movie.addLayer
+var layer2 = new vd.layer.Video({ startTime: 3, source: htmlVideoEl })
+movie.layers.push(layer1, layer2)  // the same as calling movie.addLayer
 ```
+
+There are a number of [built-in layers](../api/modules/layer.html), but you can
+also subclass any of them and create your own.
 
 # Effects
 
 Effects alter a layer or movie's output. Currently, only visual effects are
-supported. Audio can be manipulated using the [web audio API].
-Vidar offers a set of built-in effects:
+supported. Audio can be manipulated using the [web audio API] (see
+[`Audio`](../api/classes/layer.audio.html)). Vidar offers a set of [built-in
+effects](../api/modules/effect.html) that can be used like this:
 ```js
 var effect = new vd.effect.Contrast(2.0)
 layer.addEffect(effect)
 ```
 
-You can also create your own visual effects by subclassing a base effect
-class. If you want to make a hardware-acclerated effect that uses GLSL,
-subclass `vd.effect.Shader`. If you want to make any other type of effect,
+You can also create your own visual effects by subclassing a base effect class.
+If you want to make a hardware-acclerated effect that uses GLSL, subclass
+`vd.effect.Shader`. If you want to make any other type of visual effect,
 subclass `vd.effect.Base` directly.
 
 Example of a custom effect:
