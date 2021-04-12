@@ -50,7 +50,7 @@ new vd.KeyFrame([time1, value1, interpolationBetween1And2], [time2, value2])
 
 The interpolation item is optional.
 
-*See also: [Dynamic Properties](../docs/dynamic-properties)*
+*See also: [Dynamic Properties](../../docs/dynamic-properties)*
 
 # Unsubscribing from Events
 
@@ -58,10 +58,10 @@ There is now a `vd.event.unsubscribe` to remove event listeners.
 
 # Bugfixes
 
-A bunch of bugs were fixed. See the [changelog](../changelog).
+A bunch of bugs were fixed. See the [changelog](../../changelog).
 
 # Breaking Changes
 
-See [this guide for migrating](../docs/migrating-v0.8.0).
+See [this guide for migrating](../../docs/migrating-v0-8-0).
 
 [Eighth Update]: https://github.com/clabe45/vidar/releases/tag/v0.8

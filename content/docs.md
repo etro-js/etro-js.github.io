@@ -8,6 +8,6 @@ template = "page.html"
 - [Dynamic Properties](dynamic-properties)
 - [Custom Effects](custom-effects)
 - [Property Filters](property-filters)
-- [Migrating to v0.8.0](migrating-v0.8.0)
+- [Migrating to v0.8.0](migrating-v0-8-0)
 
 [**API Reference**](api)

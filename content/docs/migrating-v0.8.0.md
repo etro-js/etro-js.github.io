@@ -44,7 +44,7 @@ The interpolation function receives three arguments, `startValue`, `endValue`
 and `t` (the percent progress between the start and end values). It returns the
 interpolated value (with `startValue` if `t` is 0 and `endValue` if `t` is 1).
 
-*See also: [Dynamic Properties](../docs/dynamic-properties)*
+*See also: [Dynamic Properties](../../docs/dynamic-properties)*
 
 # Image Layers
 

@@ -5,7 +5,7 @@ template = "page.html"
 
 <div class="heading-text">Changelog</div>
 
-# [0.8.0] - 2021.04.11
+# [0.8.0] - 2021-04-11
 ## Added
 - Type declarations.
 - `duration` option for `Movie#record`, to only record a subsection of the movie.
