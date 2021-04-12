@@ -39,7 +39,7 @@ downloaded as a video file.
 Effects can transform the output of a layer or movie:
 ```js
 var layer = new vd.layer.Video({ startTime: 0, source: videoElement })
-    .addEffect(new vd.effect.Brightness(+100))
+    .addEffect(new vd.effect.Brightness({ brightness: +100 }))
 ```
 
 # Using in Node
