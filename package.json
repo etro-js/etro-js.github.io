@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "zola build && cd vidar && npm i && npm run doc && mv docs ../public/api",
+    "build": "rm -r public; zola build && cd vidar && npm i && npm run doc && mv docs ../public/docs/api",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
