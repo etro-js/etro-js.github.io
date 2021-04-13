@@ -14,7 +14,7 @@ title = "Vidar"
 # Installation
 
 ```
-npm i vidar
+npm install vidar
 ```
 
 # Usage
@@ -76,3 +76,7 @@ Thank you very much for considering contributing to this project!
 We appreciate any form of contribution:
 - New issues (feature requests, bug reports, questions, ideas, ...)
 - Pull requests (documentation improvements, code improvements, new features, ...)
+
+Please see the [contributing guide] for more information.
+
+[contributing guide]: https://github.com/clabe45/vidar/blob/master/CONTRIBUTING.md

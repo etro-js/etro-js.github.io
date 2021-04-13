@@ -48,6 +48,34 @@ template = "page.html"
 - Visual layers' `border` property not being processed correctly.
 - Effects' and layers' `attach()` and `detach()` methods not being called when replaced by another effect or layer.
 
+# [0.7.0] - 2020-12-17
+## Added
+- Importing with CommonJS syntax.
+- MIME type option for `record`.
+
+## Changed
+- Movies are no longer hidden and silent when exporting.
+- Media layers' audio nodes can now be reconnected to other audio nodes.
+- `refresh` can be called when the movie is playing or recording to force render.
+
+## Removed
+- Image layers' `imageX`, `imageY`, `imageWidth` and `imageHeight` properties. Every image is now rendered over its entire layer.
+- Video layers' `mediaX`, `mediaY`, `mediaWidth` and `mediaHeight` properties. Every video is now rendered over its entire layer.
+
+## Fixed
+- Fix recording with only video or only audio.
+- Video layers' `clipWidth` and `clipHeight` are no longer treated as invalid options.
+- Image layers' `clipWidth` and `clipHeight` are no longer set in the constructor, so if the `clipWidth` option is not supplied and the layer's `width` changes `clipWidth` uses the new `width`.
+- Video and image layers' `width` and `height` default to their `clipWidth` and `clipHeight` respectively.
+- Elliptical mask effect throwing `TypeError: path.split is not a function`.
+- In shader effects, textures whose dimensions are not powers of two accept interpolation filters.
+- No longer ignore video layers' `mediaWidth` option.
+- Treat layers' `enabled` property as dynamic (allowing for keyframes and functions).
+- Make each media layer's duration depend on its playback rate.
+
+## Security
+- Update vulnerable dependencies.
+
 # [0.6.0] - 2019-12-26
 ## Added
 - Add [API documentation](https://clabe45.github.io/vidar/).
