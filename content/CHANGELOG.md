@@ -1,6 +1,7 @@
 +++
 title = "Changelog"
 template = "page.html"
+weight = 2
 +++
 
 <div class="heading-text">Changelog</div>

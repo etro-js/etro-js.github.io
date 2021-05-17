@@ -1,6 +1,7 @@
 +++
 title = "Docs"
 template = "page.html"
+weight = 0
 +++
 
 **Guides:**
