@@ -12,27 +12,54 @@ feel free to [contribute]!
 
 # True Node Support
 
-We are currently working on a vidar-node rewrite. The rewrite will use Node
-implementations of browser technologies to create a seamless Node integration
-without running in a headless browser.
+We are currently working on a vidar-node rewrite with a focus on usability. Our
+goal is to make the API virtually identical to vidar's API. More details coming
+soon!
 
 # Audio System
 
 A [new audio system], with more audio layers and the introduction of audio
-effects is on its way!
+effects is on its way! This will be a built-in way to manipulate audio.
 
 Some of the highlights:
+- User-defined audio layers (from any audio source node)
 - Panner effect
+  - Changes the balance of an audio layer, moving the output to the left or
+    right speaker
 - Equalizer effect
+  - Makes certain frequencies louder than others.
 - Compressor effect
 - Echo effect
 - Reverb effect
 - Pitch shift effect
+- User-defined effects
+
+Example custom effect (API may change):
+```js
+class Effect extends vd.effect.Audio {
+  attach (target) {
+    // Create any intermediary node
+    this.node = target.movie.actx.createGain()
+    this.node.volume.value = 2
+    // `inputNode` and `outputNode` are populated by the target (they will
+    // point to audio nodes of the target, the next/previous effect or
+    // movie.actx)
+    this.inputNode.connect(node)
+    this.node.connect(this.outputNode)
+  }
+
+  detach() {
+    this.inputNode.disconnect()
+    this.node.disconnect()
+  }
+}
+```
 
 # Layer Inheritance
 
 A new [group layer] will be introduced. A group layer will have both audio and
-visual support, along with multiple children.
+visual support, along with multiple children. Then, you will be able to apply an
+effect to a group of layers.
 
 [group layer]: https://github.com/clabe45/vidar/issues/65
 
@@ -40,7 +67,12 @@ visual support, along with multiple children.
 
 A [transition system] is also on its way! You will be able to attach any
 built-in or custom transition to two layers. The transition will then
-interpolate the audio and/or visual output of both layers.
+interpolate the audio and/or visual output of both layers. It will look
+something like this:
+
+```js
+transition.addTo(layer1, layer2)
+```
 
 # 3D System
 
