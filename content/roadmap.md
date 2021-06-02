@@ -10,7 +10,7 @@ Vidar has several epics planned for the next phase of development. These will
 most likely continue for multiple minor releases. If any of them interest you,
 feel free to [contribute]!
 
-# True Node Support
+# Better Node Support
 
 We are currently working on a vidar-node rewrite with a focus on usability. Our
 goal is to make the API virtually identical to vidar's API. More details coming
@@ -88,9 +88,9 @@ ideas!
 Other planned changes:
 
 - [Creating sources directly from path / url](https://github.com/clabe45/vidar/issues/61)
-- [Duplicating layers](https://github.com/clabe45/vidar/issues/60)
+- [Layer duplication](https://github.com/clabe45/vidar/issues/60)
 - [Improved gaussian blur](https://github.com/clabe45/vidar/issues/44)
-- [More visual effects](https://github.com/clabe45/vidar/issues/10)
+- [More visual effects](https://github.com/clabe45/vidar/issues/10) (exposure, glow, random noise and more)
 
 [contribute]: https://github.com/clabe45/vidar/blob/master/CONTRIBUTING.md
 [new audio system]: https://github.com/clabe45/vidar/projects/1
