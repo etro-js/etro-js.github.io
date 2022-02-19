@@ -1,7 +1,7 @@
 title = "Vidar - edit videos with JavaScript"
 
 # The URL the site will be built for
-base_url = "https://clabe45.github.io/vidar"
+base_url = "/vidar"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
