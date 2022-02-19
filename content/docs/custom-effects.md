@@ -14,13 +14,17 @@ can be manipulated with the [web audio API] and the `audioNode` property of an
 
 ```js
 class Effect extends vd.effect.Base {
+  constructor(color) {
+    this.color = color
+  }
+
   /**
    * @param {(vd.Movie | vd.layer.Visual)} target - what to apply the effect to
    */
   apply(target) {
     // 'cctx' stands for 'canvas context'; it's the 2d rendering context of the
     // target's `canvas`
-    target.cctx.fillStyle = 'blue'
+    target.cctx.fillStyle = vd.val(this, 'color', this.currentTime)
     target.cctx.fillRect(
       0, 0, target.canvas.width / 2, target.canvas.height / 2
     )
@@ -28,8 +32,9 @@ class Effect extends vd.effect.Base {
 }
 ```
 
-This draws a blue rectangle over the target. `target` can either be a movie or
-a visual layer.
+This draws a rectangle over `target`, which can either be a movie or a visual
+layer. [`vd.val()`](../api/index.html#val) evaluates `this.color` at the current
+frame, in case it is a [dynamic property](../dynamic-properties.md).
 
 # Hardware-Accelerated Pixel Mapping
 
