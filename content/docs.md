@@ -5,7 +5,7 @@ weight = 0
 +++
 
 **Guides:**
-- [Overview](overview) (covers the fundamentals of Vidar)
+- [Overview](overview)
 - [Dynamic Properties](dynamic-properties)
 - [Custom Effects](custom-effects)
 - [Property Filters](property-filters)
