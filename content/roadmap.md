@@ -10,16 +10,16 @@ Vidar has several epics planned for the next phase of development. These will
 most likely continue for multiple minor releases. If any of them interest you,
 feel free to [contribute]!
 
-# Better Node Support
+# Offline Rendering
 
-We are currently working on a vidar-node rewrite with a focus on usability. Our
-goal is to make the API virtually identical to vidar's API. More details coming
-soon!
+[Offline recording] with [ffmpeg.js] is the focus right now. This will get rid
+of frame drops in the render, and it should also improve render speed.
 
 # Audio System
 
 A [new audio system], with more audio layers and the introduction of audio
-effects is on its way! This will be a built-in way to manipulate audio.
+effects is close to being done! It will provide a built-in API to manipulate
+audio.
 
 Some of the highlights:
 - User-defined audio layers (from any audio source node)
@@ -55,6 +55,9 @@ class Effect extends vd.effect.Audio {
 }
 ```
 
+An [issue with recording audio in our functional tests] is preventing real
+progress on this. Help with investigating the problem is welcome!
+
 # Layer Inheritance
 
 A new [group layer] will be introduced. A group layer will have both audio and
@@ -74,6 +77,12 @@ something like this:
 transition.addTo(layer1, layer2)
 ```
 
+# Better Node Support
+
+We are currently working on a vidar-node rewrite with a focus on better
+usability. Our goal is to make the API virtually identical to vidar's API. More
+details coming soon!
+
 # 3D System
 
 Although still in early planning, we could use three.js to add a 3D mode to
@@ -88,10 +97,17 @@ ideas!
 Other planned changes:
 
 - [Creating sources directly from path / url](https://github.com/clabe45/vidar/issues/61)
+- [Integration with canvas libraries](https://github.com/clabe45/vidar/issues/109) (such as fabric.js)
 - [Layer duplication](https://github.com/clabe45/vidar/issues/60)
 - [Improved gaussian blur](https://github.com/clabe45/vidar/issues/44)
 - [More visual effects](https://github.com/clabe45/vidar/issues/10) (exposure, glow, random noise and more)
 
+If you would like to make a feature request, please [open an issue] on GitHub!
+
 [contribute]: https://github.com/clabe45/vidar/blob/master/CONTRIBUTING.md
+[offline recording]: https://github.com/clabe45/vidar/issues/115
+[ffmpeg.js]: https://github.com/Kagami/ffmpeg.js
 [new audio system]: https://github.com/clabe45/vidar/projects/1
+[issue with recording audio in our functional tests]: https://github.com/clabe45/vidar/issues/100
 [transition system]: https://github.com/clabe45/vidar/projects/3
+[open an issue]: https://github.com/clabe45/vidar/issues
