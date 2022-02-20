@@ -84,7 +84,7 @@ layer.background = () => new vd.Color(Math.random(), Math.random(), Math.random(
 
 If you're making a custom layer or effect, you'll need to evaluate dynamic
 properties to get the value for the current frame. Use
-[`vd.val()`](../api/index.html#val) to do this.
+[`vd.val()`](/docs/api/index.html#val) to do this.
 
 ```ts
 function val(element: VidarObject, path: string, time: number): any

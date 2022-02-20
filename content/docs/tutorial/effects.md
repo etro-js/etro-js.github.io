@@ -1,16 +1,37 @@
 +++
-title = "Custom Effects"
+title = "Effects"
 template = "page.html"
 +++
 
-<div class="heading-text">Custom Effects</div>
+<div class="heading-text">Effects</div>
+
+Effects (or filters) can be used to modify a layer or a movie. Right now, only
+visual effects are supported.
+
+# Built-in Visual Effects
+
+GLSL effects (`vd.effect.Shader`):
+- `vd.effect.Brightness`
+- `vd.effect.Channels`
+- `vd.effect.ChromaKey`
+- `vd.effect.Contrast`
+- `vd.effect.GaussianBlur`
+- `vd.effect.Grayscale`
+- `vd.effect.Pixelate`
+
+Other visual effects:
+- `vd.effect.EllipticalMask`
+- `vd.effect.Stack`
+- `vd.effect.Transform` - 2D transformations
+
+# Custom Visual Effects
 
 Vidar provides many built-in effects, but you can subclass any of them to create
-your own. Note that the term 'effects' refers to 'visual effects' only. Audio
-can be manipulated with the [web audio API] and the `audioNode` property of an
+your own. Note that, for now, Vidar only supports visual effects. Audio can be
+manipulated with the [web audio API] and the `audioNode` property of an
 [`Audio`] layer, as shown below.
 
-# Simple Visual Effect
+## Simple Visual Effect
 
 ```js
 class Effect extends vd.effect.Base {
@@ -33,12 +54,12 @@ class Effect extends vd.effect.Base {
 ```
 
 This draws a rectangle over `target`, which can either be a movie or a visual
-layer. [`vd.val()`](../api/index.html#val) evaluates `this.color` at the current
+layer. [`vd.val()`](/docs/api/index.html#val) evaluates `this.color` at the current
 frame, in case it is a [dynamic property](../dynamic-properties.md).
 
-# Hardware-Accelerated Pixel Mapping
+## Hardware-Accelerated Filters
 
-You can subclass [`vd.effect.Shader`](../api/classes/effect.shader.html) to make
+You can subclass [`vd.effect.Shader`](/docs/api/classes/effect.shader.html) to make
 an effect that maps each pixel to a new value using the GPU. The following
 example sets each color's red, green and blue channels to `x` divided by the
 value of the channel before the effect is applied. The fragment shader source

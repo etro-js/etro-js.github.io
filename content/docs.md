@@ -4,11 +4,9 @@ template = "page.html"
 weight = 0
 +++
 
-**Guides:**
-- [Overview](overview)
-- [Dynamic Properties](dynamic-properties)
-- [Custom Effects](custom-effects)
-- [Property Filters](property-filters)
-- [Migrating to v0.8.0](migrating-v0-8-0)
+<div class="heading-text">Documentation</div>
 
-[**API Reference**](api)
+- [Getting Started](getting-started)
+- [Tutorial](tutorial)
+- [Migrating to v0.8.0](migrating-v0-8-0)
+- [API Reference](api)
