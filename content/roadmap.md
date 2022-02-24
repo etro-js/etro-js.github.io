@@ -18,7 +18,7 @@ of frame drops in the render, and it should also improve render speed.
 # Audio System
 
 A [new audio system], with more audio layers and the introduction of audio
-effects is close to being done! It will provide a built-in API to manipulate
+effects is close to being done. It will provide a built-in API to manipulate
 audio.
 
 Some of the highlights:
@@ -54,9 +54,6 @@ class Effect extends etro.effect.Audio {
   }
 }
 ```
-
-An [issue with recording audio in our functional tests] is preventing real
-progress on this. Help with investigating the problem is welcome!
 
 # Layer Inheritance
 
