@@ -1,8 +1,8 @@
 +++
-title = "Vidar"
+title = "Etro"
 +++
 
-# Vidar
+# Etro
 
 - Composite video and audio layers
 - Use built-in hardware accelerated effects
@@ -14,20 +14,20 @@ title = "Vidar"
 # Installation
 
 ```
-npm install vidar
+npm install etro
 ```
 
 # Usage
 
 Include it with
 ```js
-<script src="node_modules/vidar/dist/vidar-iife.js"></script>
+<script src="node_modules/etro/dist/etro-iife.js"></script>
 ```
 
 Let's look at an example:
 ```js
-var movie = new vd.Movie({ canvas: outputCanvas })
-var layer = new vd.layer.Video({ startTime: 0, source: videoElement })  // the layer starts at 0s
+var movie = new etro.Movie({ canvas: outputCanvas })
+var layer = new etro.layer.Video({ startTime: 0, source: videoElement })  // the layer starts at 0s
 movie.addLayer(layer)
 movie.record({ frameRate: 24 })  // or just `play` if you don't need to save it
     .then(blob => ...)
@@ -38,36 +38,36 @@ downloaded as a video file.
 
 Effects can transform the output of a layer or movie:
 ```js
-var layer = new vd.layer.Video({ startTime: 0, source: videoElement })
-    .addEffect(new vd.effect.Brightness({ brightness: +100 }))
+var layer = new etro.layer.Video({ startTime: 0, source: videoElement })
+    .addEffect(new etro.effect.Brightness({ brightness: +100 }))
 ```
 
 # Using in Node
 
-To use Vidar in Node, use the [wrapper](https://github.com/clabe45/vidar-node):
+To use Etro in Node, use the [wrapper](https://github.com/etro-js/etro-node):
 ```
-npm i vidar-node
+npm i etro-node
 ```
 
 ```js
-var vidarNode = require('vidar-node')
+var etroNode = require('etro-node')
 
-vidarNode(() => {
-  // You can access inputs as html elements and pass them to Vidar as usual.
+etroNode(() => {
+  // You can access inputs as html elements and pass them to Etro as usual.
   var image = document.getElementById('input1') // <img> element
 
-  // Use vidar normally ...
+  // Use etro normally ...
 
   movie
     .exportRaw()
     .then(window.done)
-// Tell Vidar Node what inputs to load with { id: path }
+// Tell Etro Node what inputs to load with { id: path }
 }, { input1: 'image.png' }, 'output.mp4')
 ```
 
-`vidarNode()` takes an optional Puppeteer page argument, so you can run
-multiple Vidar scripts on the same movie (useful for servers). See [the
-docs](https://github.com/clabe45/vidar-node#documentation).
+`etroNode()` takes an optional Puppeteer page argument, so you can run
+multiple Etro scripts on the same movie (useful for servers). See [the
+docs](https://github.com/etro-js/etro-node#documentation).
 
 # Contributing
 
@@ -79,4 +79,4 @@ We appreciate any form of contribution:
 
 Please see the [contributing guide] for more information.
 
-[contributing guide]: https://github.com/clabe45/vidar/blob/master/CONTRIBUTING.md
+[contributing guide]: https://github.com/etro-js/etro/blob/master/CONTRIBUTING.md

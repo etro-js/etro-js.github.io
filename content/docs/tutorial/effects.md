@@ -10,42 +10,42 @@ visual effects are supported.
 
 # Built-in Visual Effects
 
-GLSL effects (`vd.effect.Shader`):
-- `vd.effect.Brightness`
-- `vd.effect.Channels`
-- `vd.effect.ChromaKey`
-- `vd.effect.Contrast`
-- `vd.effect.GaussianBlur`
-- `vd.effect.Grayscale`
-- `vd.effect.Pixelate`
+GLSL effects (`etro.effect.Shader`):
+- `etro.effect.Brightness`
+- `etro.effect.Channels`
+- `etro.effect.ChromaKey`
+- `etro.effect.Contrast`
+- `etro.effect.GaussianBlur`
+- `etro.effect.Grayscale`
+- `etro.effect.Pixelate`
 
 Other visual effects:
-- `vd.effect.EllipticalMask`
-- `vd.effect.Stack`
-- `vd.effect.Transform` - 2D transformations
+- `etro.effect.EllipticalMask`
+- `etro.effect.Stack`
+- `etro.effect.Transform` - 2D transformations
 
 # Custom Visual Effects
 
-Vidar provides many built-in effects, but you can subclass any of them to create
-your own. Note that, for now, Vidar only supports visual effects. Audio can be
+Etro provides many built-in effects, but you can subclass any of them to create
+your own. Note that, for now, Etro only supports visual effects. Audio can be
 manipulated with the [web audio API] and the `audioNode` property of an
 [`Audio`] layer, as shown below.
 
 ## Simple Visual Effect
 
 ```js
-class Effect extends vd.effect.Base {
+class Effect extends etro.effect.Base {
   constructor(color) {
     this.color = color
   }
 
   /**
-   * @param {(vd.Movie | vd.layer.Visual)} target - what to apply the effect to
+   * @param {(etro.Movie | etro.layer.Visual)} target - what to apply the effect to
    */
   apply(target) {
     // 'cctx' stands for 'canvas context'; it's the 2d rendering context of the
     // target's `canvas`
-    target.cctx.fillStyle = vd.val(this, 'color', this.currentTime)
+    target.cctx.fillStyle = etro.val(this, 'color', this.currentTime)
     target.cctx.fillRect(
       0, 0, target.canvas.width / 2, target.canvas.height / 2
     )
@@ -54,19 +54,19 @@ class Effect extends vd.effect.Base {
 ```
 
 This draws a rectangle over `target`, which can either be a movie or a visual
-layer. [`vd.val()`](/docs/api/index.html#val) evaluates `this.color` at the current
+layer. [`etro.val()`](/docs/api/index.html#val) evaluates `this.color` at the current
 frame, in case it is a [dynamic property](../dynamic-properties.md).
 
 ## Hardware-Accelerated Filters
 
-You can subclass [`vd.effect.Shader`](/docs/api/classes/effect.shader.html) to make
+You can subclass [`etro.effect.Shader`](/docs/api/classes/effect.shader.html) to make
 an effect that maps each pixel to a new value using the GPU. The following
 example sets each color's red, green and blue channels to `x` divided by the
 value of the channel before the effect is applied. The fragment shader source
 code is written in GLSL.
 
 ```js
-class Effect extends vd.effect.Shader {
+class Effect extends etro.effect.Shader {
   constructor(x = 1) {
     super({
       fragmentSource: `

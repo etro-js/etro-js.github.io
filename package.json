@@ -1,23 +1,23 @@
 {
-  "name": "vidar-site",
+  "name": "etro-site",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "zola serve",
-    "build": "rm -r public; zola build && cd vidar && npm i && npm run doc && mv docs ../public/docs/api && git restore package-lock.json",
+    "build": "rm -r public; zola build && cd etro && npm i && npm run doc && mv docs ../public/docs/api && git restore package-lock.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clabe45/vidar-site.git"
+    "url": "git+https://github.com/etro-js/etro-site.git"
   },
   "author": "clabe45",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/clabe45/vidar-site/issues"
+    "url": "https://github.com/etro-js/etro-site/issues"
   },
-  "homepage": "https://github.com/clabe45/vidar-site#readme",
+  "homepage": "https://github.com/etro-js/etro-site#readme",
   "dependencies": {
     "jsdoc": "^3.6.6",
     "jsdoc-export-default-interop": "^0.3.1",

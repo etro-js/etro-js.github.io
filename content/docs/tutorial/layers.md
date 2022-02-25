@@ -8,14 +8,14 @@ template = "page.html"
 # Overview
 
 A layer (or clip) is a single piece of content with audio and/or video output.
-Vidar comes with several layers builtin. You can also write your own layers
+Etro comes with several layers builtin. You can also write your own layers
 with JavaScript (see [Custom Layers](#custom-layers)).
 
 # Audio
 
 To use an `<audio/>` element in a movie:
 ```js
-var audioLayer = new vd.layer.Audio({ startTime: 0, source: audioElement })
+var audioLayer = new etro.layer.Audio({ startTime: 0, source: audioElement })
 movie.addLayer(audioLayer)
 ```
 
@@ -30,7 +30,7 @@ Optional arguments:
 
 To use an `<img/>` element in a movie:
 ```js
-var imageLayer = new vd.layer.Image({ startTime: 0, duration: 3, source: img })
+var imageLayer = new etro.layer.Image({ startTime: 0, duration: 3, source: img })
 movie.addLayer(imageLayer)
 ```
 
@@ -50,7 +50,7 @@ Optional arguments:
 To add text to a movie:
 ```js
 var fn = () => `${Math.random()}`  // Choose a random number every frame
-var textLayer = new vd.layer.Text({ startTime: 0, duration: 3, text: fn })
+var textLayer = new etro.layer.Text({ startTime: 0, duration: 3, text: fn })
 movie.addLayer(textLayer)
 ```
 
@@ -73,7 +73,7 @@ Optional arguments:
 
 To add a `<video/>` element to a movie:
 ```js
-var videoLayer = new vd.layer.Video({ startTime: 0, source: videoElement })
+var videoLayer = new etro.layer.Video({ startTime: 0, source: videoElement })
 movie.addLayer(videoLayer)
 ```
 
@@ -96,7 +96,7 @@ Optional arguments:
 
 You can subclass any layer to create your own:
 ```js
-class MyLayer extends vd.layer.Visual {
+class MyLayer extends etro.layer.Visual {
   constructor(options) {
     super(options)
 
@@ -108,7 +108,7 @@ class MyLayer extends vd.layer.Visual {
     super.doRender()
 
     // Evaluate the foo property at the current frame (to support dynamic properties)
-    if (vd.val(this, 'foo', this.currentTime)) {
+    if (etro.val(this, 'foo', this.currentTime)) {
       // cctx (canvas context) is the 2d rendering context for this layer
       this.cctx.fillRect(0, 0, this.width, this.height)
     }

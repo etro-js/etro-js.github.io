@@ -13,14 +13,14 @@ out the [changelog](../../changelog) to see the entire list!
 
 # TypeScript Support
 
-After version 0.7.0 was released, Vidar was ported to TypeScript. This means up-to-date
+After version 0.7.0 was released, Etro was ported to TypeScript. This means up-to-date
 type declaration files for TypeScript projects, as well as remaining
 compatibility with pure JavaScript projects (plus better documentation). No
 extra steps are required to use the framework in your TypeScript project.
 
 # Support for More Browsers
 
-Vidar now uses a polyfill for the web audio API so more browsers can use it.
+Etro now uses a polyfill for the web audio API so more browsers can use it.
 
 # Recording a Subsection
 
@@ -45,7 +45,7 @@ You can now set the interpolation for a specific point in a keyframe set.
 
 **After:**
 ```js
-new vd.KeyFrame([time1, value1, interpolationBetween1And2], [time2, value2])
+new etro.KeyFrame([time1, value1, interpolationBetween1And2], [time2, value2])
 ```
 
 The interpolation item is optional.
@@ -54,7 +54,7 @@ The interpolation item is optional.
 
 # Unsubscribing from Events
 
-There is now a `vd.event.unsubscribe` to remove event listeners.
+There is now a `etro.event.unsubscribe` to remove event listeners.
 
 # Bugfixes
 
@@ -64,4 +64,4 @@ A bunch of bugs were fixed. See the [changelog](../../changelog).
 
 See [this guide for migrating](../../docs/migrating-v0-8-0).
 
-[Eighth Update]: https://github.com/clabe45/vidar/releases/tag/v0.8
+[Eighth Update]: https://github.com/etro-js/etro/releases/tag/v0.8

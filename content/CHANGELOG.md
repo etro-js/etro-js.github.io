@@ -7,5 +7,5 @@ weight = 2
 **Redirecting...**
 
 <script>
-  window.location.replace('https://github.com/clabe45/vidar/blob/master/CHANGELOG.md')
+  window.location.replace('https://github.com/etro-js/etro/blob/master/CHANGELOG.md')
 </script>

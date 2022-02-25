@@ -5,13 +5,13 @@ template = "page.html"
 
 <div class="heading-text">Movies</div>
 
-The [`vd.Movie`](/vidar/docs/api/classes/Movie.html) class
+The [`etro.Movie`](/docs/api/classes/Movie.html) class
 is used to render layers and effects into a single video blob. When creating a
 movie, a canvas to render to is required:
 
 ```js
 var canvas = document.createElement('canvas')
-var movie = new vd.Movie({ canvas )})
+var movie = new etro.Movie({ canvas )})
 ```
 
 From here, you can either set the `width` and `height` on the canvas or the

@@ -37,7 +37,7 @@ The `audioContext` option for `Movie` was renamed to `actx`, to match
 Keyframes now take the form
 
 ```js
-new vd.KeyFrame([time1, val1, interpolation], [time2, val2])
+new etro.KeyFrame([time1, val1, interpolation], [time2, val2])
 ```
 
 The interpolation function receives three arguments, `startValue`, `endValue`

@@ -6,7 +6,7 @@ weight = 1
 
 <div class="heading-text">Roadmap</div>
 
-Vidar has several epics planned for the next phase of development. These will
+Etro has several epics planned for the next phase of development. These will
 most likely continue for multiple minor releases. If any of them interest you,
 feel free to [contribute]!
 
@@ -36,7 +36,7 @@ Some of the highlights:
 
 Example custom effect (API may change):
 ```js
-class Effect extends vd.effect.Audio {
+class Effect extends etro.effect.Audio {
   attach (target) {
     // Create any intermediary node
     this.node = target.movie.actx.createGain()
@@ -64,7 +64,7 @@ A new [group layer] will be introduced. A group layer will have both audio and
 visual support, along with multiple children. Then, you will be able to apply an
 effect to a group of layers.
 
-[group layer]: https://github.com/clabe45/vidar/issues/65
+[group layer]: https://github.com/etro-js/etro/issues/65
 
 # Transitions
 
@@ -79,8 +79,8 @@ transition.addTo(layer1, layer2)
 
 # Better Node Support
 
-We are currently working on a vidar-node rewrite with a focus on better
-usability. Our goal is to make the API virtually identical to vidar's API. More
+We are currently working on a etro-node rewrite with a focus on better
+usability. Our goal is to make the API virtually identical to etro's API. More
 details coming soon!
 
 # 3D System
@@ -89,25 +89,25 @@ Although still in early planning, we could use three.js to add a 3D mode to
 movies, where every visual and audio layer has a 3D position. Alternatively, we
 could get rid of the concept of a "3D movie" and allow both 2D and 3D layers to
 be added to any movie. Feel free to post on the [GitHub
-discussion](https://github.com/clabe45/vidar/discussions/78) if you have any
+discussion](https://github.com/etro-js/etro/discussions/78) if you have any
 ideas!
 
 # Other
 
 Other planned changes:
 
-- [Creating sources directly from path / url](https://github.com/clabe45/vidar/issues/61)
-- [Integration with canvas libraries](https://github.com/clabe45/vidar/issues/109) (such as fabric.js)
-- [Layer duplication](https://github.com/clabe45/vidar/issues/60)
-- [Improved gaussian blur](https://github.com/clabe45/vidar/issues/44)
-- [More visual effects](https://github.com/clabe45/vidar/issues/10) (exposure, glow, random noise and more)
+- [Creating sources directly from path / url](https://github.com/etro-js/etro/issues/61)
+- [Integration with canvas libraries](https://github.com/etro-js/etro/issues/109) (such as fabric.js)
+- [Layer duplication](https://github.com/etro-js/etro/issues/60)
+- [Improved gaussian blur](https://github.com/etro-js/etro/issues/44)
+- [More visual effects](https://github.com/etro-js/etro/issues/10) (exposure, glow, random noise and more)
 
 If you would like to make a feature request, please [open an issue] on GitHub!
 
-[contribute]: https://github.com/clabe45/vidar/blob/master/CONTRIBUTING.md
-[offline recording]: https://github.com/clabe45/vidar/issues/115
+[contribute]: https://github.com/etro-js/etro/blob/master/CONTRIBUTING.md
+[offline recording]: https://github.com/etro-js/etro/issues/115
 [ffmpeg.js]: https://github.com/Kagami/ffmpeg.js
-[new audio system]: https://github.com/clabe45/vidar/projects/1
-[issue with recording audio in our functional tests]: https://github.com/clabe45/vidar/issues/100
-[transition system]: https://github.com/clabe45/vidar/projects/3
-[open an issue]: https://github.com/clabe45/vidar/issues
+[new audio system]: https://github.com/etro-js/etro/projects/1
+[issue with recording audio in our functional tests]: https://github.com/etro-js/etro/issues/100
+[transition system]: https://github.com/etro-js/etro/projects/3
+[open an issue]: https://github.com/etro-js/etro/issues
