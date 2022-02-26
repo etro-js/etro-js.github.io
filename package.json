@@ -22,5 +22,8 @@
     "jsdoc": "^3.6.6",
     "jsdoc-export-default-interop": "^0.3.1",
     "minami": "^1.2.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
