@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Overview | Etro - edit videos with JavaScript </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        --front-color: #d7fffc;
+        /* Primary theme color */
+        --primary-color: #00cab9;
+        /* Primary theme text color */
+        --primary-text-color: #4d4d4d;
+        /* Primary theme link color */
+        --primary-link-color: #00cab9;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #a8a8a8;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #00cab9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://etrojs.dev/juice.css">
+    
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;etrojs.dev&#x2F;">
+    <div class="logo">
+        <img src="https://etrojs.dev/logo.svg" alt="logo">
+        Etro
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;etro-js&#x2F;etro">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/overview/#movie">Movie</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/overview/#layers">Layers</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/overview/#effects">Effects</a>
+        </div>
+        <!--  -->
+        
+    </div>
+</div>
+
+
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<div class="heading-text">Etro Overview</div>
+<p>In Etro, the movie is a context for adding and rendering content. It holds a
+list of layers and effects. A layer is a piece of video and/or audio content
+with a list of effects.</p>
+<h1 id="movie">Movie</h1>
+<p>To create a movie that will render to the <canvas> <code>outputCanvas</code>:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">var </span><span>movie </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>Movie(</span><span style="color:#39adb5;">{ </span><span>canvas</span><span style="color:#39adb5;">: </span><span>outputCanvas </span><span style="color:#39adb5;">}</span><span>)
+</span></code></pre>
+<p>The movie can then be played or recorded. Playing renders the movie to the
+canvas and audio context, and it can be interrupted with <code>pause</code>. Recording
+renders the movie and saves the result to a video blob.</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span>movie</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">play</span><span>()
+</span><span style="font-style:italic;color:#ccd7da;">// or
+</span><span>movie</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">record</span><span>(</span><span style="color:#39adb5;">{ </span><span>frameRate</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">30 </span><span style="color:#39adb5;">}</span><span>)</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">then</span><span>(</span><span style="color:#f76d47;">blob </span><span style="font-style:italic;color:#7c4dff;">=&gt; </span><span style="font-style:italic;color:#ccd7da;">/*do something with `blob`*/</span><span>)
+</span></code></pre>
+<p>See the <a href="../api/classes/movie.html"><code>Movie</code> documentation</a>.</p>
+<h1 id="layers">Layers</h1>
+<p>Layers are pieces of content for the movie, such as video and audio clips and
+titles:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#ccd7da;">// The base visual layer renders a solid rectangle filling its bounds
+</span><span style="font-style:italic;color:#7c4dff;">var </span><span>layer1 </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>layer</span><span style="color:#39adb5;">.</span><span>Visual(</span><span style="color:#39adb5;">{ </span><span>startTime</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span>duration</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">3 </span><span style="color:#39adb5;">}</span><span>)
+</span><span style="font-style:italic;color:#ccd7da;">// The video layer extends the visual layer and renders an html video element
+</span><span style="font-style:italic;color:#7c4dff;">var </span><span>layer2 </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>layer</span><span style="color:#39adb5;">.</span><span>Video(</span><span style="color:#39adb5;">{ </span><span>startTime</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">3</span><span style="color:#39adb5;">, </span><span>source</span><span style="color:#39adb5;">: </span><span>htmlVideoEl </span><span style="color:#39adb5;">}</span><span>)
+</span><span>movie</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">layers</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">push</span><span>(layer1</span><span style="color:#39adb5;">, </span><span>layer2)  </span><span style="font-style:italic;color:#ccd7da;">// the same as calling movie.addLayer
+</span></code></pre>
+<p>There are a number of <a href="../api/modules/layer.html">built-in layers</a>, but you can
+also subclass any of them and create your own.</p>
+<h1 id="effects">Effects</h1>
+<p>Effects alter a layer or movie's output. Currently, only visual effects are
+supported. Audio can be manipulated using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">web audio API</a> (see
+<a href="../api/classes/layer.audio.html"><code>Audio</code></a>). Etro offers a set of <a href="../api/modules/effect.html">built-in
+effects</a> that can be used like this:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">var </span><span>effect </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>effect</span><span style="color:#39adb5;">.</span><span>Contrast(</span><span style="color:#f76d47;">2.0</span><span>)
+</span><span>layer</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">addEffect</span><span>(effect)
+</span></code></pre>
+<p>You can also create your own visual effects by subclassing a base effect class.
+If you want to make a hardware-acclerated effect that uses GLSL, subclass
+<code>etro.effect.Shader</code>. If you want to make any other type of visual effect,
+subclass <code>etro.effect.Base</code> directly.</p>
+<p>Example of a custom effect:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">class </span><span style="color:#ffb62c;">MyEffect </span><span style="color:#7c4dff;">extends </span><span>etro</span><span style="color:#39adb5;">.</span><span>effect</span><span style="color:#39adb5;">.</span><span style="color:#91b859;">Base </span><span style="color:#39adb5;">{
+</span><span>    </span><span style="font-style:italic;color:#7c4dff;">constructor</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">width</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">height</span><span style="color:#39adb5;">) {
+</span><span>        </span><span style="font-style:italic;color:#e53935;">super</span><span>()
+</span><span>        </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>width </span><span style="color:#39adb5;">= </span><span>width
+</span><span>        </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>height </span><span style="color:#39adb5;">= </span><span>height
+</span><span>    </span><span style="color:#39adb5;">}
+</span><span>    </span><span style="font-style:italic;color:#ccd7da;">/**
+</span><span style="font-style:italic;color:#ccd7da;">     * </span><span style="font-style:italic;color:#39adb5;">@</span><span style="font-style:italic;color:#7c4dff;">param </span><span style="font-style:italic;color:#39adb5;">{</span><span style="font-style:italic;color:#ccd7da;">(etro.Movie|etro.layer.Visual)</span><span style="font-style:italic;color:#39adb5;">} </span><span style="font-style:italic;color:#80cbc4;">target
+</span><span style="font-style:italic;color:#ccd7da;">     */
+</span><span>    </span><span style="color:#6182b8;">apply</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">target</span><span style="color:#39adb5;">) {
+</span><span>        target</span><span style="color:#39adb5;">.</span><span>vctx</span><span style="color:#39adb5;">.</span><span>fillStyle </span><span style="color:#39adb5;">= &#39;</span><span style="color:#91b859;">red</span><span style="color:#39adb5;">&#39;
+</span><span>        target</span><span style="color:#39adb5;">.</span><span>vctx</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">fillRect</span><span>(</span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>width</span><span style="color:#39adb5;">, </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>height)
+</span><span>    </span><span style="color:#39adb5;">}
+</span><span style="color:#39adb5;">}
+</span><span>
+</span><span>layer</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">addEffect</span><span>(</span><span style="color:#39adb5;">new </span><span>MyEffect(</span><span style="color:#f76d47;">100</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">100</span><span>))
+</span></code></pre>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <em>
+            Etro was previously known as Vidar, but it was renamed to avoid
+            confusion with an existing software product.
+        </em>
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

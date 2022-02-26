@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Migrating to the Eighth Update | Etro - edit videos with JavaScript </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        --front-color: #d7fffc;
+        /* Primary theme color */
+        --primary-color: #00cab9;
+        /* Primary theme text color */
+        --primary-text-color: #4d4d4d;
+        /* Primary theme link color */
+        --primary-link-color: #00cab9;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #a8a8a8;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #00cab9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://etrojs.dev/juice.css">
+    
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;etrojs.dev&#x2F;">
+    <div class="logo">
+        <img src="https://etrojs.dev/logo.svg" alt="logo">
+        Etro
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;etro-js&#x2F;etro">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/migrating-v0-8-0/#options">Options</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/migrating-v0-8-0/#audiocontext-actx">audioContext → actx</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/migrating-v0-8-0/#keyframes">Keyframes</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/migrating-v0-8-0/#image-layers">Image Layers</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/migrating-v0-8-0/#audio-and-video-layers">Audio and Video Layers</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/migrating-v0-8-0/#dimension-fallback-behavior">Dimension Fallback Behavior</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/migrating-v0-8-0/#events">Events</a>
+        </div>
+        <!--  -->
+        
+    </div>
+</div>
+
+
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<div class="heading-text">Migrating to the Eighth Update</div>
+<p>The Eighth Update is here! With it, come some breaking changes that aim to make
+the API more comprehensive and consistent. This guide will show how to update
+your project to reflect these changes.</p>
+<h1 id="options">Options</h1>
+<p>Constructors and methods with a lot of optional arguments used to take an object
+<code>options</code> that contained these arguments. Now, all constructors, along with
+<code>Movie#record</code>, accept <em>all</em> arguments through an <code>options</code> argument. The idea
+behind this decision was to avoid having to remember the order of all the
+arguments, and to create a more streamline JavaScript API.</p>
+<p><strong>Before</strong>:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#39adb5;">new </span><span>Movie(canvas</span><span style="color:#39adb5;">, { </span><span>repeat</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">true </span><span style="color:#39adb5;">}</span><span>)
+</span></code></pre>
+<p><strong>After</strong>:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#39adb5;">new </span><span>Movie(</span><span style="color:#39adb5;">{ </span><span>canvas</span><span style="color:#39adb5;">: </span><span>canvas</span><span style="color:#39adb5;">, </span><span>repeat</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">true </span><span style="color:#39adb5;">}</span><span>)
+</span></code></pre>
+<h1 id="audiocontext-actx"><code>audioContext</code> → <code>actx</code></h1>
+<p>The <code>audioContext</code> option for <code>Movie</code> was renamed to <code>actx</code>, to match
+<code>Movie#actx</code>.</p>
+<h1 id="keyframes">Keyframes</h1>
+<p>Keyframes now take the form</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#39adb5;">new </span><span>etro</span><span style="color:#39adb5;">.</span><span>KeyFrame([time1</span><span style="color:#39adb5;">, </span><span>val1</span><span style="color:#39adb5;">, </span><span>interpolation]</span><span style="color:#39adb5;">, </span><span>[time2</span><span style="color:#39adb5;">, </span><span>val2])
+</span></code></pre>
+<p>The interpolation function receives three arguments, <code>startValue</code>, <code>endValue</code>
+and <code>t</code> (the percent progress between the start and end values). It returns the
+interpolated value (with <code>startValue</code> if <code>t</code> is 0 and <code>endValue</code> if <code>t</code> is 1).</p>
+<p><em>See also: <a href="../../docs/dynamic-properties">Dynamic Properties</a></em></p>
+<h1 id="image-layers">Image Layers</h1>
+<ul>
+<li><code>image</code> was renamed to <code>source</code>.</li>
+<li><code>clipX</code> → <code>sourceX</code></li>
+<li><code>clipY</code> → <code>sourceY</code></li>
+<li><code>clipWidth</code> → <code>sourceWidth</code></li>
+<li><code>clipHeight</code> → <code>sourceHeight</code></li>
+</ul>
+<h1 id="audio-and-video-layers">Audio and Video Layers</h1>
+<ul>
+<li><code>source</code> was renamed to <code>audioNode</code>.</li>
+<li><code>media</code> → <code>source</code>.</li>
+<li><code>mediaStartTime</code> → <code>sourceStartTime</code>.</li>
+</ul>
+<h1 id="dimension-fallback-behavior">Dimension Fallback Behavior</h1>
+<p>For image and video layers, <code>width</code> now defaults to <code>destWidth</code>, which defaults
+to <code>sourceWidth</code>, which defaults to the width of the image or video (and the
+same for <code>height</code>).</p>
+<h1 id="events">Events</h1>
+<p>The <code>movie.audiodestinationupdate</code> event is now published on the movie instead
+of each layer.</p>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <em>
+            Etro was previously known as Vidar, but it was renamed to avoid
+            confusion with an existing software product.
+        </em>
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

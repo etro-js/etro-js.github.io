@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Properties | Etro - edit videos with JavaScript </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        --front-color: #d7fffc;
+        /* Primary theme color */
+        --primary-color: #00cab9;
+        /* Primary theme text color */
+        --primary-text-color: #4d4d4d;
+        /* Primary theme link color */
+        --primary-link-color: #00cab9;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #a8a8a8;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #00cab9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://etrojs.dev/juice.css">
+    
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;etrojs.dev&#x2F;">
+    <div class="logo">
+        <img src="https://etrojs.dev/logo.svg" alt="logo">
+        Etro
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;etro-js&#x2F;etro">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/dynamic-properties/#constant-values">Constant Values</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/dynamic-properties/#key-frames">Key Frames</a>
+        </div>
+        <!-- 
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/dynamic-properties/#interpolation"><small>- Interpolation</small></a>
+        </div>
+        
+         -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/dynamic-properties/#functions">Functions</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/dynamic-properties/#val">val</a>
+        </div>
+        <!--  -->
+        
+    </div>
+</div>
+
+
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<div class="heading-text">Dynamic Properties</div>
+<p>Most values in Etro are <em>dynamic</em>, meaning they can either be constant values,
+key frames or functions. These properties have the type <code>Dynamic&lt;T&gt;</code>, which is
+defined as</p>
+<pre data-lang="ts" style="background-color:#fafafa;color:#80cbc4;" class="language-ts "><code class="language-ts" data-lang="ts"><span>T </span><span style="color:#39adb5;">| </span><span>KeyFrame</span><span style="color:#39adb5;">&lt;</span><span>T</span><span style="color:#39adb5;">&gt; | </span><span>(</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">element</span><span style="color:#39adb5;">: </span><span>EtroObject</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">time</span><span style="color:#39adb5;">: </span><span style="color:#ffb62c;">number</span><span style="color:#39adb5;">) </span><span style="font-style:italic;color:#7c4dff;">=&gt; </span><span>T)
+</span></code></pre>
+<p>which means <em>constant value</em>, <em>key frame set</em>, or <em>function</em>.</p>
+<h1 id="constant-values">Constant Values</h1>
+<p>Constant values are expressions that are treated literally, i.e.:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span>movie</span><span style="color:#39adb5;">.</span><span>background </span><span style="color:#39adb5;">= &#39;</span><span style="color:#91b859;">blue</span><span style="color:#39adb5;">&#39;
+</span></code></pre>
+<p>Here, the movie's background color will always be blue (that is, until it is
+reassigned).</p>
+<h1 id="key-frames">Key Frames</h1>
+<p>Key frame sets contain different values for different times. Its syntax is:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#39adb5;">new </span><span>etro</span><span style="color:#39adb5;">.</span><span>KeyFrame([time1</span><span style="color:#39adb5;">, </span><span>val1</span><span style="color:#39adb5;">, </span><span>interp1]</span><span style="color:#39adb5;">, </span><span>[time2</span><span style="color:#39adb5;">, </span><span>val2</span><span style="color:#39adb5;">, </span><span>interp2]</span><span style="color:#39adb5;">, ...</span><span>)
+</span></code></pre>
+<p>At <code>time1</code>, it will evaluate to <code>val1</code>, at <code>time2</code> it will <code>val2</code>, and in
+between it will be interpolated by <code>interp1</code>. The interpolation functions
+default to <code>etro.linearInterp</code>, but you can also define your own.</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span>layer</span><span style="color:#39adb5;">.</span><span>opacity </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>KeyFrame([</span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">1</span><span>]</span><span style="color:#39adb5;">, </span><span>[</span><span style="color:#f76d47;">3</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">0</span><span>])
+</span></code></pre>
+<p>The layer's opacity will start at <code>1</code> and gradually decrease until to <code>0</code> at 3
+seconds.</p>
+<h2 id="interpolation">Interpolation</h2>
+<p>Etro comes with a few built-in interpolation methods:</p>
+<ul>
+<li><code>etro.linearInterp</code> - interpolates numbers (and objects containing numbers) linearly</li>
+<li><code>etro.cosineInterp</code> - interpolates numbers (and objects containing numbers) on a cosine curve</li>
+</ul>
+<p>Only numbers and objects are accepted by these functions. For all other types,
+the first value is used and the second value is ignored.</p>
+<p>You can also define your own interpolation functions. They must take the form:</p>
+<pre data-lang="ts" style="background-color:#fafafa;color:#80cbc4;" class="language-ts "><code class="language-ts" data-lang="ts"><span style="color:#39adb5;">(</span><span style="color:#f76d47;">val1</span><span style="color:#39adb5;">: </span><span style="color:#ffb62c;">number </span><span style="color:#39adb5;">| </span><span style="color:#ffb62c;">object</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">val2</span><span style="color:#39adb5;">: </span><span style="color:#ffb62c;">number </span><span style="color:#39adb5;">| </span><span style="color:#ffb62c;">object</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">t</span><span style="color:#39adb5;">: </span><span style="color:#ffb62c;">number</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">objectKeys</span><span style="color:#39adb5;">?: </span><span style="color:#ffb62c;">string</span><span>[]</span><span style="color:#39adb5;">) </span><span style="font-style:italic;color:#7c4dff;">=&gt; </span><span>number </span><span style="color:#39adb5;">| </span><span>object
+</span></code></pre>
+<p>where <code>objectKeys</code> contains the names of the object properties to interpolate
+(<code>undefined</code> means &quot;all properties&quot;).</p>
+<h1 id="functions">Functions</h1>
+<p>You can also pass a function that returns a value per-frame. It must take the
+following form:</p>
+<pre data-lang="ts" style="background-color:#fafafa;color:#80cbc4;" class="language-ts "><code class="language-ts" data-lang="ts"><span style="color:#39adb5;">&lt;</span><span>T</span><span style="color:#39adb5;">&gt;(</span><span style="color:#f76d47;">element</span><span style="color:#39adb5;">: </span><span>EtroObject</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">time</span><span style="color:#39adb5;">: </span><span style="color:#ffb62c;">number</span><span style="color:#39adb5;">) </span><span style="font-style:italic;color:#7c4dff;">=&gt; </span><span>T
+</span></code></pre>
+<p>Example:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#ccd7da;">// Make a new visual layer that lasts forever
+</span><span style="font-style:italic;color:#7c4dff;">var </span><span>layer </span><span style="color:#39adb5;">= new </span><span>VisualLayer(</span><span style="color:#39adb5;">{ </span><span>startTime</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span>duration</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">Infinity </span><span style="color:#39adb5;">}</span><span>)
+</span><span style="font-style:italic;color:#ccd7da;">// Give it a new random background color each frame
+</span><span>layer</span><span style="color:#39adb5;">.</span><span>background </span><span style="color:#39adb5;">= () </span><span style="font-style:italic;color:#7c4dff;">=&gt; </span><span style="color:#39adb5;">new </span><span>etro</span><span style="color:#39adb5;">.</span><span>Color(</span><span style="color:#f76d47;">Math</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">random</span><span>()</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">Math</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">random</span><span>()</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">Math</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">random</span><span>())
+</span></code></pre>
+<h1 id="val"><code>val</code></h1>
+<p>If you're making a custom layer or effect, you'll need to evaluate dynamic
+properties to get the value for the current frame. Use
+<a href="/docs/api/index.html#val"><code>etro.val()</code></a> to do this.</p>
+<pre data-lang="ts" style="background-color:#fafafa;color:#80cbc4;" class="language-ts "><code class="language-ts" data-lang="ts"><span style="font-style:italic;color:#7c4dff;">function </span><span style="color:#6182b8;">val</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">element</span><span style="color:#39adb5;">: </span><span>EtroObject</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">path</span><span style="color:#39adb5;">: </span><span style="color:#ffb62c;">string</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">time</span><span style="color:#39adb5;">: </span><span style="color:#ffb62c;">number</span><span style="color:#39adb5;">): </span><span style="color:#ffb62c;">any
+</span></code></pre>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <em>
+            Etro was previously known as Vidar, but it was renamed to avoid
+            confusion with an existing software product.
+        </em>
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Roadmap | Etro - edit videos with JavaScript </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        --front-color: #d7fffc;
+        /* Primary theme color */
+        --primary-color: #00cab9;
+        /* Primary theme text color */
+        --primary-text-color: #4d4d4d;
+        /* Primary theme link color */
+        --primary-link-color: #00cab9;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #a8a8a8;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #00cab9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://etrojs.dev/juice.css">
+    
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;etrojs.dev&#x2F;">
+    <div class="logo">
+        <img src="https://etrojs.dev/logo.svg" alt="logo">
+        Etro
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;etro-js&#x2F;etro">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/roadmap/#offline-rendering">Offline Rendering</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/roadmap/#audio-system">Audio System</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/roadmap/#layer-inheritance">Layer Inheritance</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/roadmap/#transitions">Transitions</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/roadmap/#better-node-support">Better Node Support</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/roadmap/#3d-system">3D System</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/roadmap/#other">Other</a>
+        </div>
+        <!--  -->
+        
+    </div>
+</div>
+
+
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<div class="heading-text">Roadmap</div>
+<p>Etro has several epics planned for the next phase of development. These will
+most likely continue for multiple minor releases. If any of them interest you,
+feel free to <a href="https://github.com/etro-js/etro/blob/master/CONTRIBUTING.md">contribute</a>!</p>
+<h1 id="offline-rendering">Offline Rendering</h1>
+<p><a href="https://github.com/etro-js/etro/issues/115">Offline recording</a> with <a href="https://github.com/Kagami/ffmpeg.js">ffmpeg.js</a> is the focus right now. This will get rid
+of frame drops in the render, and it should also improve render speed.</p>
+<h1 id="audio-system">Audio System</h1>
+<p>A <a href="https://github.com/etro-js/etro/projects/1">new audio system</a>, with more audio layers and the introduction of audio
+effects is close to being done! It will provide a built-in API to manipulate
+audio.</p>
+<p>Some of the highlights:</p>
+<ul>
+<li>User-defined audio layers (from any audio source node)</li>
+<li>Panner effect
+<ul>
+<li>Changes the balance of an audio layer, moving the output to the left or
+right speaker</li>
+</ul>
+</li>
+<li>Equalizer effect
+<ul>
+<li>Makes certain frequencies louder than others.</li>
+</ul>
+</li>
+<li>Compressor effect</li>
+<li>Echo effect</li>
+<li>Reverb effect</li>
+<li>Pitch shift effect</li>
+<li>User-defined effects</li>
+</ul>
+<p>Example custom effect (API may change):</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">class </span><span style="color:#ffb62c;">Effect </span><span style="color:#7c4dff;">extends </span><span>etro</span><span style="color:#39adb5;">.</span><span>effect</span><span style="color:#39adb5;">.</span><span style="color:#91b859;">Audio </span><span style="color:#39adb5;">{
+</span><span>  </span><span style="color:#6182b8;">attach </span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">target</span><span style="color:#39adb5;">) {
+</span><span style="color:#39adb5;">    </span><span style="font-style:italic;color:#ccd7da;">// Create any intermediary node
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>node </span><span style="color:#39adb5;">= </span><span>target</span><span style="color:#39adb5;">.</span><span>movie</span><span style="color:#39adb5;">.</span><span>actx</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">createGain</span><span>()
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>node</span><span style="color:#39adb5;">.</span><span>volume</span><span style="color:#39adb5;">.</span><span>value </span><span style="color:#39adb5;">= </span><span style="color:#f76d47;">2
+</span><span style="color:#39adb5;">    </span><span style="font-style:italic;color:#ccd7da;">// `inputNode` and `outputNode` are populated by the target (they will
+</span><span style="color:#39adb5;">    </span><span style="font-style:italic;color:#ccd7da;">// point to audio nodes of the target, the next/previous effect or
+</span><span style="color:#39adb5;">    </span><span style="font-style:italic;color:#ccd7da;">// movie.actx)
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>inputNode</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">connect</span><span>(node)
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>node</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">connect</span><span>(</span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>outputNode)
+</span><span>  </span><span style="color:#39adb5;">}
+</span><span>
+</span><span>  </span><span style="color:#6182b8;">detach</span><span style="color:#39adb5;">() {
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>inputNode</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">disconnect</span><span>()
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>node</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">disconnect</span><span>()
+</span><span>  </span><span style="color:#39adb5;">}
+</span><span style="color:#39adb5;">}
+</span></code></pre>
+<p>An <a href="https://github.com/etro-js/etro/issues/100">issue with recording audio in our functional tests</a> is preventing real
+progress on this. Help with investigating the problem is welcome!</p>
+<h1 id="layer-inheritance">Layer Inheritance</h1>
+<p>A new <a href="https://github.com/etro-js/etro/issues/65">group layer</a> will be introduced. A group layer will have both audio and
+visual support, along with multiple children. Then, you will be able to apply an
+effect to a group of layers.</p>
+<h1 id="transitions">Transitions</h1>
+<p>A <a href="https://github.com/etro-js/etro/projects/3">transition system</a> is also on its way! You will be able to attach any
+built-in or custom transition to two layers. The transition will then
+interpolate the audio and/or visual output of both layers. It will look
+something like this:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span>transition</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">addTo</span><span>(layer1</span><span style="color:#39adb5;">, </span><span>layer2)
+</span></code></pre>
+<h1 id="better-node-support">Better Node Support</h1>
+<p>We are currently working on a etro-node rewrite with a focus on better
+usability. Our goal is to make the API virtually identical to etro's API. More
+details coming soon!</p>
+<h1 id="3d-system">3D System</h1>
+<p>Although still in early planning, we could use three.js to add a 3D mode to
+movies, where every visual and audio layer has a 3D position. Alternatively, we
+could get rid of the concept of a &quot;3D movie&quot; and allow both 2D and 3D layers to
+be added to any movie. Feel free to post on the <a href="https://github.com/etro-js/etro/discussions/78">GitHub
+discussion</a> if you have any
+ideas!</p>
+<h1 id="other">Other</h1>
+<p>Other planned changes:</p>
+<ul>
+<li><a href="https://github.com/etro-js/etro/issues/61">Creating sources directly from path / url</a></li>
+<li><a href="https://github.com/etro-js/etro/issues/109">Integration with canvas libraries</a> (such as fabric.js)</li>
+<li><a href="https://github.com/etro-js/etro/issues/60">Layer duplication</a></li>
+<li><a href="https://github.com/etro-js/etro/issues/44">Improved gaussian blur</a></li>
+<li><a href="https://github.com/etro-js/etro/issues/10">More visual effects</a> (exposure, glow, random noise and more)</li>
+</ul>
+<p>If you would like to make a feature request, please <a href="https://github.com/etro-js/etro/issues">open an issue</a> on GitHub!</p>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <em>
+            Etro was previously known as Vidar, but it was renamed to avoid
+            confusion with an existing software product.
+        </em>
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

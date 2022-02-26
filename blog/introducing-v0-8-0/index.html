@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Introducing the Eighth Update | Etro - edit videos with JavaScript </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        --front-color: #d7fffc;
+        /* Primary theme color */
+        --primary-color: #00cab9;
+        /* Primary theme text color */
+        --primary-text-color: #4d4d4d;
+        /* Primary theme link color */
+        --primary-link-color: #00cab9;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #a8a8a8;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #00cab9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://etrojs.dev/juice.css">
+    
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;etrojs.dev&#x2F;">
+    <div class="logo">
+        <img src="https://etrojs.dev/logo.svg" alt="logo">
+        Etro
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;etro-js&#x2F;etro">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/blog/introducing-v0-8-0/#typescript-support">TypeScript Support</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/blog/introducing-v0-8-0/#support-for-more-browsers">Support for More Browsers</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/blog/introducing-v0-8-0/#recording-a-subsection">Recording a Subsection</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/blog/introducing-v0-8-0/#new-keyframe-syntax">New Keyframe Syntax</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/blog/introducing-v0-8-0/#unsubscribing-from-events">Unsubscribing from Events</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/blog/introducing-v0-8-0/#bugfixes">Bugfixes</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/blog/introducing-v0-8-0/#breaking-changes">Breaking Changes</a>
+        </div>
+        <!--  -->
+        
+    </div>
+</div>
+
+
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<div class="heading-text">Introducing the Eighth Update</div>
+<p><em>By Caleb Sacks - April 3, 2021</em></p>
+<p>The <a href="https://github.com/etro-js/etro/releases/tag/v0.8">Eighth Update</a> is here! In fact, this is the eighth update that has ever
+been released. We'll go over the most interesting changes here, but please check
+out the <a href="../../changelog">changelog</a> to see the entire list!</p>
+<h1 id="typescript-support">TypeScript Support</h1>
+<p>After version 0.7.0 was released, Etro was ported to TypeScript. This means up-to-date
+type declaration files for TypeScript projects, as well as remaining
+compatibility with pure JavaScript projects (plus better documentation). No
+extra steps are required to use the framework in your TypeScript project.</p>
+<h1 id="support-for-more-browsers">Support for More Browsers</h1>
+<p>Etro now uses a polyfill for the web audio API so more browsers can use it.</p>
+<h1 id="recording-a-subsection">Recording a Subsection</h1>
+<p><a href="../../docs/api/classes/movie.html#record"><code>Movie#record</code></a> now accepts a <code>duration</code> option that controls how long to record
+for. By setting the movie's <code>startTime</code> and then recording with a duration, you
+can record a part of the movie:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#ccd7da;">// Record from 5s to 8s
+</span><span>movie</span><span style="color:#39adb5;">.</span><span>startTime </span><span style="color:#39adb5;">= </span><span style="color:#f76d47;">5
+</span><span>movie</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">record</span><span>(</span><span style="color:#39adb5;">{ </span><span>frameRate</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">29</span><span style="color:#39adb5;">, </span><span>duration</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">3 </span><span style="color:#39adb5;">}</span><span>)
+</span></code></pre>
+<h1 id="new-keyframe-syntax">New Keyframe Syntax</h1>
+<p>You can now set the interpolation for a specific point in a keyframe set.</p>
+<p><strong>Before:</strong></p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#39adb5;">{ </span><span>time1</span><span style="color:#39adb5;">: </span><span>value1</span><span style="color:#39adb5;">, </span><span>time2</span><span style="color:#39adb5;">: </span><span>value2 </span><span style="color:#39adb5;">}
+</span></code></pre>
+<p><strong>After:</strong></p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#39adb5;">new </span><span>etro</span><span style="color:#39adb5;">.</span><span>KeyFrame([time1</span><span style="color:#39adb5;">, </span><span>value1</span><span style="color:#39adb5;">, </span><span>interpolationBetween1And2]</span><span style="color:#39adb5;">, </span><span>[time2</span><span style="color:#39adb5;">, </span><span>value2])
+</span></code></pre>
+<p>The interpolation item is optional.</p>
+<p><em>See also: <a href="../../docs/dynamic-properties">Dynamic Properties</a></em></p>
+<h1 id="unsubscribing-from-events">Unsubscribing from Events</h1>
+<p>There is now a <code>etro.event.unsubscribe</code> to remove event listeners.</p>
+<h1 id="bugfixes">Bugfixes</h1>
+<p>A bunch of bugs were fixed. See the <a href="../../changelog">changelog</a>.</p>
+<h1 id="breaking-changes">Breaking Changes</h1>
+<p>See <a href="../../docs/migrating-v0-8-0">this guide for migrating</a>.</p>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <em>
+            Etro was previously known as Vidar, but it was renamed to avoid
+            confusion with an existing software product.
+        </em>
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

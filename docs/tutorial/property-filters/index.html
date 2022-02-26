@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Property Filters | Etro - edit videos with JavaScript </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        --front-color: #d7fffc;
+        /* Primary theme color */
+        --primary-color: #00cab9;
+        /* Primary theme text color */
+        --primary-text-color: #4d4d4d;
+        /* Primary theme link color */
+        --primary-link-color: #00cab9;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #a8a8a8;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #00cab9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://etrojs.dev/juice.css">
+    
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;etrojs.dev&#x2F;">
+    <div class="logo">
+        <img src="https://etrojs.dev/logo.svg" alt="logo">
+        Etro
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;etro-js&#x2F;etro">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/property-filters/#usage">Usage</a>
+        </div>
+        <!--  -->
+        
+    </div>
+</div>
+
+
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<div class="heading-text">Property Filters</div>
+<p>Property filters map the per-frame value (<code>etro.val</code> output) of a property to a
+new value. They are useful for applying custom logic to the output of a key
+frame set or function at a given time.</p>
+<h1 id="usage">Usage</h1>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">class </span><span style="color:#ffb62c;">CustomLayer </span><span style="color:#7c4dff;">extends </span><span>etro</span><span style="color:#39adb5;">.</span><span>layer</span><span style="color:#39adb5;">.</span><span style="color:#91b859;">Base </span><span style="color:#39adb5;">{
+</span><span>  </span><span style="font-style:italic;color:#7c4dff;">constructor</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">options</span><span style="color:#39adb5;">) {
+</span><span>    </span><span style="font-style:italic;color:#e53935;">super</span><span>(options)
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>foo </span><span style="color:#39adb5;">= </span><span>options</span><span style="color:#39adb5;">.</span><span>foo
+</span><span>  </span><span style="color:#39adb5;">}
+</span><span style="color:#39adb5;">}
+</span><span>
+</span><span style="color:#ffb62c;">CustomLayer</span><span style="color:#39adb5;">.</span><span>prototype</span><span style="color:#39adb5;">.</span><span>propertyFilters </span><span style="color:#39adb5;">= {
+</span><span style="color:#39adb5;">  </span><span style="font-style:italic;color:#ccd7da;">// Inherit superclass&#39;s property filters
+</span><span>  </span><span style="color:#39adb5;">...</span><span>etro</span><span style="color:#39adb5;">.</span><span>layer</span><span style="color:#39adb5;">.</span><span>Base</span><span style="color:#39adb5;">.</span><span>propertyFilters</span><span style="color:#39adb5;">,
+</span><span style="color:#39adb5;">  </span><span style="font-style:italic;color:#ccd7da;">// Define `foo` property filter
+</span><span>  </span><span style="color:#6182b8;">foo</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">foo </span><span style="font-style:italic;color:#7c4dff;">=&gt; </span><span style="color:#f76d47;">Math</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">max</span><span>(</span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">Math</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">min</span><span>(foo</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">1</span><span>)) </span><span style="font-style:italic;color:#ccd7da;">// clamp between 0 and 1
+</span><span style="color:#39adb5;">}
+</span></code></pre>
+<p>Now, you can evaluate the value as usual, and <code>val</code> will apply the property
+filter (after evaluating the key frame or function):</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">const </span><span>layer </span><span style="color:#39adb5;">= new </span><span>CustomLayer(</span><span style="color:#39adb5;">{ </span><span>startTime</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span>duration</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">3</span><span style="color:#39adb5;">, </span><span>foo</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">2 </span><span style="color:#39adb5;">}</span><span>)
+</span><span style="color:#ffb62c;">console</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">log</span><span>(layer</span><span style="color:#39adb5;">.</span><span>foo)  </span><span style="font-style:italic;color:#ccd7da;">// prints &#39;2&#39;, no property filter applied
+</span><span style="color:#ffb62c;">console</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">log</span><span>(etro</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">val</span><span>(layer</span><span style="color:#39adb5;">, &#39;</span><span style="color:#91b859;">foo</span><span style="color:#39adb5;">&#39;, </span><span>layer</span><span style="color:#39adb5;">.</span><span>currentTime))  </span><span style="font-style:italic;color:#ccd7da;">// prints &#39;1&#39;, property filter applied
+</span></code></pre>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <em>
+            Etro was previously known as Vidar, but it was renamed to avoid
+            confusion with an existing software product.
+        </em>
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

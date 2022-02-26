@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Effects | Etro - edit videos with JavaScript </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        --front-color: #d7fffc;
+        /* Primary theme color */
+        --primary-color: #00cab9;
+        /* Primary theme text color */
+        --primary-text-color: #4d4d4d;
+        /* Primary theme link color */
+        --primary-link-color: #00cab9;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #a8a8a8;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #00cab9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://etrojs.dev/juice.css">
+    
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;etrojs.dev&#x2F;">
+    <div class="logo">
+        <img src="https://etrojs.dev/logo.svg" alt="logo">
+        Etro
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;etro-js&#x2F;etro">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/effects/#built-in-visual-effects">Built-in Visual Effects</a>
+        </div>
+        <!--  -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/effects/#custom-visual-effects">Custom Visual Effects</a>
+        </div>
+        <!-- 
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/effects/#simple-visual-effect"><small>- Simple Visual Effect</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/effects/#hardware-accelerated-filters"><small>- Hardware-Accelerated Filters</small></a>
+        </div>
+        
+         -->
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://etrojs.dev/docs/tutorial/effects/#audio-manipulation">Audio Manipulation</a>
+        </div>
+        <!--  -->
+        
+    </div>
+</div>
+
+
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<div class="heading-text">Effects</div>
+<p>Effects (or filters) can be used to modify a layer or a movie. Right now, only
+visual effects are supported.</p>
+<h1 id="built-in-visual-effects">Built-in Visual Effects</h1>
+<p>GLSL effects (<code>etro.effect.Shader</code>):</p>
+<ul>
+<li><code>etro.effect.Brightness</code></li>
+<li><code>etro.effect.Channels</code></li>
+<li><code>etro.effect.ChromaKey</code></li>
+<li><code>etro.effect.Contrast</code></li>
+<li><code>etro.effect.GaussianBlur</code></li>
+<li><code>etro.effect.Grayscale</code></li>
+<li><code>etro.effect.Pixelate</code></li>
+</ul>
+<p>Other visual effects:</p>
+<ul>
+<li><code>etro.effect.EllipticalMask</code></li>
+<li><code>etro.effect.Stack</code></li>
+<li><code>etro.effect.Transform</code> - 2D transformations</li>
+</ul>
+<h1 id="custom-visual-effects">Custom Visual Effects</h1>
+<p>Etro provides many built-in effects, but you can subclass any of them to create
+your own. Note that, for now, Etro only supports visual effects. Audio can be
+manipulated with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">web audio API</a> and the <code>audioNode</code> property of an
+<a href="../api/classes/layer.audio.html"><code>Audio</code></a> layer, as shown below.</p>
+<h2 id="simple-visual-effect">Simple Visual Effect</h2>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">class </span><span style="color:#ffb62c;">Effect </span><span style="color:#7c4dff;">extends </span><span>etro</span><span style="color:#39adb5;">.</span><span>effect</span><span style="color:#39adb5;">.</span><span style="color:#91b859;">Base </span><span style="color:#39adb5;">{
+</span><span>  </span><span style="font-style:italic;color:#7c4dff;">constructor</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">color</span><span style="color:#39adb5;">) {
+</span><span>    </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>color </span><span style="color:#39adb5;">= </span><span>color
+</span><span>  </span><span style="color:#39adb5;">}
+</span><span>
+</span><span>  </span><span style="font-style:italic;color:#ccd7da;">/**
+</span><span style="font-style:italic;color:#ccd7da;">   * </span><span style="font-style:italic;color:#39adb5;">@</span><span style="font-style:italic;color:#7c4dff;">param </span><span style="font-style:italic;color:#39adb5;">{</span><span style="font-style:italic;color:#ccd7da;">(etro.Movie | etro.layer.Visual)</span><span style="font-style:italic;color:#39adb5;">} </span><span style="font-style:italic;color:#80cbc4;">target</span><span style="font-style:italic;color:#ccd7da;"> - what to apply the effect to
+</span><span style="font-style:italic;color:#ccd7da;">   */
+</span><span>  </span><span style="color:#6182b8;">apply</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">target</span><span style="color:#39adb5;">) {
+</span><span style="color:#39adb5;">    </span><span style="font-style:italic;color:#ccd7da;">// &#39;cctx&#39; stands for &#39;canvas context&#39;; it&#39;s the 2d rendering context of the
+</span><span style="color:#39adb5;">    </span><span style="font-style:italic;color:#ccd7da;">// target&#39;s `canvas`
+</span><span>    target</span><span style="color:#39adb5;">.</span><span>cctx</span><span style="color:#39adb5;">.</span><span>fillStyle </span><span style="color:#39adb5;">= </span><span>etro</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">val</span><span>(</span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">, &#39;</span><span style="color:#91b859;">color</span><span style="color:#39adb5;">&#39;, </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>currentTime)
+</span><span>    target</span><span style="color:#39adb5;">.</span><span>cctx</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">fillRect</span><span>(
+</span><span>      </span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span style="color:#f76d47;">0</span><span style="color:#39adb5;">, </span><span>target</span><span style="color:#39adb5;">.</span><span>canvas</span><span style="color:#39adb5;">.</span><span>width </span><span style="color:#39adb5;">/ </span><span style="color:#f76d47;">2</span><span style="color:#39adb5;">, </span><span>target</span><span style="color:#39adb5;">.</span><span>canvas</span><span style="color:#39adb5;">.</span><span>height </span><span style="color:#39adb5;">/ </span><span style="color:#f76d47;">2
+</span><span>    )
+</span><span>  </span><span style="color:#39adb5;">}
+</span><span style="color:#39adb5;">}
+</span></code></pre>
+<p>This draws a rectangle over <code>target</code>, which can either be a movie or a visual
+layer. <a href="/docs/api/index.html#val"><code>etro.val()</code></a> evaluates <code>this.color</code> at the current
+frame, in case it is a <a href="../dynamic-properties.md">dynamic property</a>.</p>
+<h2 id="hardware-accelerated-filters">Hardware-Accelerated Filters</h2>
+<p>You can subclass <a href="/docs/api/classes/effect.shader.html"><code>etro.effect.Shader</code></a> to make
+an effect that maps each pixel to a new value using the GPU. The following
+example sets each color's red, green and blue channels to <code>x</code> divided by the
+value of the channel before the effect is applied. The fragment shader source
+code is written in GLSL.</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">class </span><span style="color:#ffb62c;">Effect </span><span style="color:#7c4dff;">extends </span><span>etro</span><span style="color:#39adb5;">.</span><span>effect</span><span style="color:#39adb5;">.</span><span style="color:#91b859;">Shader </span><span style="color:#39adb5;">{
+</span><span>  </span><span style="font-style:italic;color:#7c4dff;">constructor</span><span style="color:#39adb5;">(</span><span style="color:#f76d47;">x </span><span style="color:#39adb5;">= </span><span style="color:#f76d47;">1</span><span style="color:#39adb5;">) {
+</span><span>    </span><span style="font-style:italic;color:#e53935;">super</span><span>(</span><span style="color:#39adb5;">{
+</span><span>      fragmentSource</span><span style="color:#39adb5;">: `
+</span><span style="color:#91b859;">        precision mediump float;
+</span><span style="color:#91b859;">
+</span><span style="color:#91b859;">        uniform sampler2D u_Source;  // the original texture (updated every frame)
+</span><span style="color:#91b859;">        uniform float u_X;  // the value of &#39;x&#39; back in JavaScript (updated every frame)
+</span><span style="color:#91b859;">
+</span><span style="color:#91b859;">        varying highp vec2 v_TextureCoord;
+</span><span style="color:#91b859;">
+</span><span style="color:#91b859;">        void main() {
+</span><span style="color:#91b859;">          vec4 color = texture2D(u_Source, v_TextureCoord);
+</span><span style="color:#91b859;">          gl_FragColor = vec4(u_X / color.rgb, color.a);
+</span><span style="color:#91b859;">        }
+</span><span style="color:#91b859;">      </span><span style="color:#39adb5;">`,
+</span><span>      uniforms</span><span style="color:#39adb5;">: {
+</span><span>        x</span><span style="color:#39adb5;">: &#39;</span><span style="color:#91b859;">1f</span><span style="color:#39adb5;">&#39;
+</span><span>      </span><span style="color:#39adb5;">}
+</span><span>
+</span><span>      </span><span style="font-style:italic;color:#e53935;">this</span><span style="color:#39adb5;">.</span><span>x </span><span style="color:#39adb5;">= </span><span>x
+</span><span>    </span><span style="color:#39adb5;">}</span><span>)
+</span><span>  </span><span style="color:#39adb5;">}
+</span><span style="color:#39adb5;">}
+</span></code></pre>
+<p>Note that each uniform is set to the result of calling <code>val</code> on the
+corresponding property; these properties are dynamic.</p>
+<h1 id="audio-manipulation">Audio Manipulation</h1>
+<p>While audio effects are not currently supported, you can modify the audio output
+of a layer or movie using the web audio API. Every audio layer has an
+<code>audioNode</code> property, and the movie has an <code>actx</code> (&quot;audio context&quot;) property. By
+default, each <code>audioNode</code> is connected to <code>actx.destination</code>, but you can also connect to an
+intermediary node that connects to <code>actx.destination</code>:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#ccd7da;">// Disconnect layer from actx.destination
+</span><span>audioLayer</span><span style="color:#39adb5;">.</span><span>audioNode</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">disconnect</span><span>(movie</span><span style="color:#39adb5;">.</span><span>actx</span><span style="color:#39adb5;">.</span><span>destination)
+</span><span style="font-style:italic;color:#ccd7da;">// Rewire
+</span><span>audioLayer</span><span style="color:#39adb5;">.</span><span>audioNode</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">connect</span><span>(someAudioNode)</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">connect</span><span>(movie</span><span style="color:#39adb5;">.</span><span>actx</span><span style="color:#39adb5;">.</span><span>destination)
+</span></code></pre>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <em>
+            Etro was previously known as Vidar, but it was renamed to avoid
+            confusion with an existing software product.
+        </em>
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
