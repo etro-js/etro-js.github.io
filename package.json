@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "zola serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -r public; zola build && cd etro && npm i && npm run doc && mv docs ../public/docs/api && git restore package-lock.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm run build",
+    "publish": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
