@@ -25,7 +25,7 @@ movie.play()
 movie.record({ frameRate: 30 }).then(blob => /*do something with `blob`*/)
 ```
 
-See the [`Movie` documentation](../api/classes/movie.html).
+See the [`Movie` documentation](./movies.md).
 
 # Layers
 
