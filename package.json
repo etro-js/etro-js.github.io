@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "zola serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r public; zola build && cp CNAME public && cd etro && npm i && npm run doc && mv docs ../public/docs/api && git restore package-lock.json",
+    "start": "echo \"Error: no start script specified\" && exit 1",
+    "test": "echo \"Error: no test script specified\" && exit 1",
+    "build": "echo \"Error: no build script specified\" && exit 1",
     "prepublish": "npm run build",
     "publish": "gh-pages -d public"
   },
