@@ -1,0 +1,31 @@
+{
+  "name": "etro-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no start script specified\" && exit 1",
+    "test": "echo \"Error: no test script specified\" && exit 1",
+    "build": "echo \"Error: no build script specified\" && exit 1",
+    "prepublish": "npm run build",
+    "publish": "gh-pages -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etro-js/etro-site.git"
+  },
+  "author": "clabe45",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etro-js/etro-site/issues"
+  },
+  "homepage": "https://github.com/etro-js/etro-site#readme",
+  "dependencies": {
+    "jsdoc": "^3.6.6",
+    "jsdoc-export-default-interop": "^0.3.1",
+    "minami": "^1.2.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}

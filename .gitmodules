@@ -1,0 +1,3 @@
+[submodule "etro"]
+	path = etro
+	url = https://github.com/etro-js/etro.git
