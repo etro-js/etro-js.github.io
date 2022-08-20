@@ -23,4 +23,4 @@ movie.height = 200  // also sets the canvas's height to 200
 ```
 
 Now we have a 200x200 movie, but there are no layers so nothing will be
-rendered. In the [next section](layers), we'll add a video clip to the movie.
+rendered. In the [next section](./../layers), we'll add a video clip to the movie.
