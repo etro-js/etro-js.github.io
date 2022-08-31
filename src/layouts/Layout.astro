@@ -1,4 +1,7 @@
 ---
+import NavBar from '../components/NavBar.astro';
+import '../styles/global.css';
+
 export interface Props {
 	title: string;
 }
@@ -16,10 +19,11 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<NavBar/>
 		<slot />
 	</body>
 </html>
-<style>
+<!-- <style>
 	:root {
 		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
 		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
@@ -53,4 +57,4 @@ const { title } = Astro.props;
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
-</style>
+</style> -->

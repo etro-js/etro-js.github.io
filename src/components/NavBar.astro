@@ -1,0 +1,65 @@
+---
+import logo from '../img/etrologo.svg'
+---
+
+<header class="header">
+  <div class="logo">
+    <a href="/">
+      <img src={logo} alt="" />
+    </a>
+  </div>
+  <div class="container">
+   
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/docs">Docs</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/">GitHub</a></li>
+
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+  height: 100vh;
+  width: 20vw;
+  background: var(--color-primary);
+}
+
+.header .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+.header .logo {
+  display: flex;
+  justify-content: center;
+}
+
+.header  img {
+  height: 55px;
+  vertical-align: middle;
+}
+
+.header nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.header nav ul li {
+  padding: 0 10px;
+}
+
+.header nav ul li a {
+  color: #fff;
+}
+</style>
