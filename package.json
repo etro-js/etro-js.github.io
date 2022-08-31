@@ -1,14 +1,14 @@
 {
   "name": "etro-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "echo \"Error: no start script specified\" && exit 1",
-    "test": "echo \"Error: no test script specified\" && exit 1",
-    "build": "echo \"Error: no build script specified\" && exit 1",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
     "prepublish": "npm run build",
-    "publish": "gh-pages -d public"
+    "publish": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "minami": "^1.2.3"
   },
   "devDependencies": {
+    "astro": "^1.1.1",
     "gh-pages": "^3.2.3"
   }
 }
