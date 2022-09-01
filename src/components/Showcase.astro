@@ -1,0 +1,40 @@
+---
+import spaceVideo from "../vids/space3.mp4"
+---
+
+<section class="showcase">
+    
+          <video src={spaceVideo} muted autoplay loop></video>
+
+</section>
+
+
+<style>
+    .showcase {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 100vh;
+        background: url();
+    }
+    .showcase video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .card {
+ background-color: green;
+ width: 300px;
+ padding: 0 20px;
+ text-align: center;
+    }
+video {
+    height: 100vh;
+    width: 100vw;
+}
+</style>
