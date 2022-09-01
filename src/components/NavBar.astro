@@ -3,12 +3,13 @@ import logo from '../img/etrologo.svg'
 ---
 
 <header class="header">
-  <div class="logo">
-    <a href="/">
-      <img src={logo} alt="" />
-    </a>
-  </div>
+  
   <div class="container">
+    <div class="logo">
+      <a href="/">
+        <img src={logo} alt="" />
+      </a>
+    </div>
    
     <nav>
       <ul>
@@ -25,34 +26,26 @@ import logo from '../img/etrologo.svg'
 </header>
 
 <style>
-  .header {
-    position: fixed;
-  height: 100vh;
-  width: 20vw;
+.header {
+  height: 70px;
   background: var(--color-primary);
 }
 
 .header .container {
   height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0 20px;
 }
-.header .logo {
-  display: flex;
-  justify-content: center;
-}
 
-.header  img {
-  height: 55px;
+.header img {
+  height: 50px;
   vertical-align: middle;
 }
 
 .header nav ul {
   display: flex;
-  flex-direction: column;
 }
 
 .header nav ul li {
@@ -63,3 +56,4 @@ import logo from '../img/etrologo.svg'
   color: #fff;
 }
 </style>
+
