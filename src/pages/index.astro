@@ -1,18 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 // import Card from '../components/Card.astro';
+import TitleCard from '../components/TitleCard.astro';
 import Showcase from '../components/Showcase.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<Showcase/>
-	<!-- <main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
+	<main>
+		<TitleCard />
+		<!-- <ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
@@ -33,8 +29,9 @@ import Showcase from '../components/Showcase.astro';
 				title="Chat"
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
-		</ul>
-	</main> -->
+		</ul> -->
+	</main>
+	<Showcase/>
 </Layout>
 
 <!-- <style>
