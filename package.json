@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepublish": "npm run build",
-    "publish": "gh-pages -d dist"
+    "publish": "gh-pages -d dist",
+    "lint": "prettier --write src astro.config.mjs tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,8 @@
   },
   "devDependencies": {
     "astro": "^1.1.1",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.4"
   }
 }
