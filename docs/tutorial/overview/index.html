@@ -48,13 +48,13 @@
 
 <nav>
     
-    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
     
-    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
     
     <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
     
-    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
     
     
         
@@ -113,7 +113,7 @@ renders the movie and saves the result to a video blob.</p>
 </span><span style="font-style:italic;color:#ccd7da;">// or
 </span><span>movie</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">record</span><span>(</span><span style="color:#39adb5;">{ </span><span>frameRate</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">30 </span><span style="color:#39adb5;">}</span><span>)</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">then</span><span>(</span><span style="color:#f76d47;">blob </span><span style="font-style:italic;color:#7c4dff;">=&gt; </span><span style="font-style:italic;color:#ccd7da;">/*do something with `blob`*/</span><span>)
 </span></code></pre>
-<p>See the <a href="../api/classes/movie.html"><code>Movie</code> documentation</a>.</p>
+<p>See the <a href="../movies.md"><code>Movie</code> documentation</a>.</p>
 <h1 id="layers">Layers</h1>
 <p>Layers are pieces of content for the movie, such as video and audio clips and
 titles:</p>
@@ -123,12 +123,12 @@ titles:</p>
 </span><span style="font-style:italic;color:#7c4dff;">var </span><span>layer2 </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>layer</span><span style="color:#39adb5;">.</span><span>Video(</span><span style="color:#39adb5;">{ </span><span>startTime</span><span style="color:#39adb5;">: </span><span style="color:#f76d47;">3</span><span style="color:#39adb5;">, </span><span>source</span><span style="color:#39adb5;">: </span><span>htmlVideoEl </span><span style="color:#39adb5;">}</span><span>)
 </span><span>movie</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">layers</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">push</span><span>(layer1</span><span style="color:#39adb5;">, </span><span>layer2)  </span><span style="font-style:italic;color:#ccd7da;">// the same as calling movie.addLayer
 </span></code></pre>
-<p>There are a number of <a href="../api/modules/layer.html">built-in layers</a>, but you can
-also subclass any of them and create your own.</p>
+<p>There are a number of <a href="/docs/api/modules/layer.html">built-in layers</a>, but you
+can also subclass any of them and create your own.</p>
 <h1 id="effects">Effects</h1>
 <p>Effects alter a layer or movie's output. Currently, only visual effects are
 supported. Audio can be manipulated using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">web audio API</a> (see
-<a href="../api/classes/layer.audio.html"><code>Audio</code></a>). Etro offers a set of <a href="../api/modules/effect.html">built-in
+<a href="/docs/api/classes/layer.audio.html"><code>Audio</code></a>). Etro offers a set of <a href="/docs/api/modules/effect.html">built-in
 effects</a> that can be used like this:</p>
 <pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">var </span><span>effect </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>effect</span><span style="color:#39adb5;">.</span><span>Contrast(</span><span style="color:#f76d47;">2.0</span><span>)
 </span><span>layer</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">addEffect</span><span>(effect)
