@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "reset": "git submodule deinit -f --all && git submodule update --init --recursive",
     "start": "zola serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf public; zola build && cp CNAME public && cd etro && npm i && npm run doc && mv docs ../public/docs/api && git restore package-lock.json",
+    "build": "npm run reset && rm -rf public; zola build && cp CNAME public && cd etro && npm i && npm run doc && mv docs ../public/docs/api && git restore package-lock.json",
     "prepublish": "npm run build",
     "publish": "gh-pages -d public"
   },
