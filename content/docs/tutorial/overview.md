@@ -25,7 +25,7 @@ movie.play()
 movie.record({ frameRate: 30 }).then(blob => /*do something with `blob`*/)
 ```
 
-See the [`Movie` documentation](./movies.md).
+See the [`Movie` documentation](../movies.md).
 
 # Layers
 
@@ -39,15 +39,15 @@ var layer2 = new etro.layer.Video({ startTime: 3, source: htmlVideoEl })
 movie.layers.push(layer1, layer2)  // the same as calling movie.addLayer
 ```
 
-There are a number of [built-in layers](../api/modules/layer.html), but you can
-also subclass any of them and create your own.
+There are a number of [built-in layers](/docs/api/modules/layer.html), but you
+can also subclass any of them and create your own.
 
 # Effects
 
 Effects alter a layer or movie's output. Currently, only visual effects are
 supported. Audio can be manipulated using the [web audio API] (see
-[`Audio`](../api/classes/layer.audio.html)). Etro offers a set of [built-in
-effects](../api/modules/effect.html) that can be used like this:
+[`Audio`](/docs/api/classes/layer.audio.html)). Etro offers a set of [built-in
+effects](/docs/api/modules/effect.html) that can be used like this:
 ```js
 var effect = new etro.effect.Contrast(2.0)
 layer.addEffect(effect)
