@@ -5,11 +5,11 @@ import logo from '../img/etrologo.svg'
 <header class="header">
   
   <div class="container">
-    <div class="logo">
+    <!-- <div class="logo">
       <a href="/">
         <img src={logo} alt="" />
       </a>
-    </div>
+    </div> -->
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -26,17 +26,23 @@ import logo from '../img/etrologo.svg'
 
 <style>
 .header {
-  position: sticky;
+  position: absolute;
   height: 70px;
-  background: var(--color-primary);
+  top: 0;
+  width: 100vw;
+  /* background: var(--color-primary); */
+  background: transparent;
   font-family: 'Roboto', sans-serif;
+  z-index: 3000;
 }
 
 .header .container {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
+
   padding: 0 20px;
 }
 
@@ -51,6 +57,7 @@ import logo from '../img/etrologo.svg'
 
 .header nav ul li {
   padding: 0 10px;
+  margin: 0 50px ;
 }
 
 .header nav ul li a {

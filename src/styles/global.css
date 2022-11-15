@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Press+Start+2P&family=Roboto&family=Russo+One&display=swap');
 :root {
-  --color-primary: #344c84a2;
+  --color-primary: #344c8424;
   --color-secondary: #6b21a8;
 }
 
@@ -16,7 +16,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background: #f8fafc;
+  background: black;
   color: #333;
 }
 
