@@ -1,35 +1,140 @@
 ---
-import spaceVideo from "../vids/space.mp4";
+// import spaceVideo from "../vids/space.mp4"
+// import backgroudVid from "../vids/production ID_4808275.mp4"
+import backgroudVid from "../vids/1080p.mp4"
+
+
+import logo from '../img/etrologo.svg'
+import NavBar from '../components/NavBar.astro';
+
+
 ---
+		<NavBar/>
+        
+
+
 
 <section class="showcase">
-  <video src={spaceVideo} muted autoplay loop></video>
+    
+    
+    <section class="scroll-sign">
+       <strong>|</strong>
+    </section>
+
+
 </section>
 
+<img class="big-logo" src={logo} alt="" />
+
+        <video src={backgroudVid} muted autoplay loop></video>
+
+
 <style>
-  .showcase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .showcase video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  .card {
-    width: 300px;
-    padding: 0 20px;
-    text-align: center;
-    background-color: black;
-  }
-  video {
+  
+    .showcase {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(15, 1, 1, 0.509);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+filter: blur(5);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(5px);
+z-index: 2000;
+    }
+
+    .big-logo {
+        position: absolute;
+        z-index:3000;
+        left: 37vw;
+        top: 20vh;
+        /* box-shadow: 0 4px 30px rgb(138, 0, 110) inset  !important; */
+        animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    
+    }
+     
+
+    
+   
+
+
+    @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px);  }
+    100%   { transform: translate(0, -0px); }   
+}
+    /* .showcase video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 1;
+    } */
+    .card {
+ width: 300px;
+ padding: 0 20px;
+ text-align: center;
+ background-color: black;
+    }
+video {
     height: 100vh;
     width: 100vw;
-  }
+    position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        /* width: 100vw;
+        height: 100vh; */
+        object-fit: cover;
+        z-index: -1;
+}
+
+
+.scroll-sign {
+    position: absolute;
+    width: 30px ;
+   height: 50px;
+    border: 2px solid white;
+    color: white;
+    /* background-color: white; */
+    border-radius: 40%;
+    z-index: 3000;
+    bottom: 10%;
+    left: 49.5%;
+    text-align: center;
+ 
+}
+
+
+
+.scroll-sign strong {
+    position: absolute;
+    left: 42.5%;
+    animation-name: scrolling;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    font-weight: bolder;
+}
+
+@keyframes scrolling {
+    0% { transform: translate(0,  0px); }
+    100%  { transform: translate(0, 20px); 
+    
+    }
+   
+    /* 100%   { transform: translate(0, -0px); }    */
+}
+
+
+
 </style>

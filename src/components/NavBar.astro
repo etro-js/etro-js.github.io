@@ -1,55 +1,67 @@
 ---
-import logo from "../img/etrologo.svg";
+import logo from '../img/etrologo.svg'
 ---
 
 <header class="header">
+  
   <div class="container">
-    <div class="logo">
+    <!-- <div class="logo">
       <a href="/">
         <img src={logo} alt="" />
       </a>
-    </div>
+    </div> -->
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/docs">Docs</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/">GitHub</a></li>
+
+
+
       </ul>
     </nav>
   </div>
 </header>
 
 <style>
-  .header {
-    position: sticky;
-    height: 70px;
-    background: var(--color-primary);
-    font-family: "Roboto", sans-serif;
-  }
+.header {
+  position: absolute;
+  height: 70px;
+  top: 0;
+  width: 100vw;
+  /* background: var(--color-primary); */
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  z-index: 3000;
+}
 
-  .header .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
+.header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  justify-content: center;
 
-  .header img {
-    height: 50px;
-    vertical-align: middle;
-  }
+  padding: 0 20px;
+}
 
-  .header nav ul {
-    display: flex;
-  }
+.header img {
+  height: 50px;
+  vertical-align: middle;
+}
 
-  .header nav ul li {
-    padding: 0 10px;
-  }
+.header nav ul {
+  display: flex;
+}
 
-  .header nav ul li a {
-    color: #fff;
-  }
+.header nav ul li {
+  padding: 0 10px;
+  margin: 0 50px ;
+}
+
+.header nav ul li a {
+  color: #fff;
+}
 </style>
+
