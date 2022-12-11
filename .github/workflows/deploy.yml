@@ -1,6 +1,7 @@
 name: Deploy
 
 env:
+  NODE_VERSION: 17
   ZOLA_VERSION: 0.16.1
 
 on:
@@ -21,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 17
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Zola
         run: |
