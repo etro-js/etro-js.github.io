@@ -19,13 +19,9 @@ npm install etro
 
 # Usage
 
-Include it with
 ```js
-<script src="node_modules/etro/dist/etro-iife.js"></script>
-```
+import etro from 'etro'
 
-Let's look at an example:
-```js
 var movie = new etro.Movie({ canvas: outputCanvas })
 var layer = new etro.layer.Video({ startTime: 0, source: videoElement })  // the layer starts at 0s
 movie.addLayer(layer)
