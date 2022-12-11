@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tutorial | Etro - edit videos with JavaScript </title>
+    <title>Movies | Etro - edit videos with JavaScript </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
     :root {
@@ -48,11 +48,11 @@
 
 <nav>
     
-    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
     
     <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;docs&#x2F;">Docs</a>
     
-    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;changelog&#x2F;">Changelog</a>
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;blog&#x2F;">Blog</a>
     
     <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;etrojs.dev&#x2F;roadmap&#x2F;">Roadmap</a>
     
@@ -75,15 +75,21 @@
         <div class="content text">
             
 <div class="heading-text"></div>
-<div class="heading-text">Tutorial</div>
-<ol>
-<li><a href="overview">Framework Overview</a></li>
-<li><a href="movies">Movies</a></li>
-<li><a href="layers">Layers</a></li>
-<li><a href="effects">Effects</a></li>
-<li><a href="dynamic-properties">Dynamic Properties</a></li>
-<li><a href="property-filters">Property Filters</a></li>
-</ol>
+<div class="heading-text">Movies</div>
+<p>The <a href="/docs/api/classes/Movie.html"><code>etro.Movie</code></a> class
+is used to render layers and effects into a single video blob. When creating a
+movie, a canvas to render to is required:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span style="font-style:italic;color:#7c4dff;">var </span><span>canvas </span><span style="color:#39adb5;">= </span><span style="color:#6182b8;">document</span><span style="color:#39adb5;">.</span><span style="color:#6182b8;">createElement</span><span>(</span><span style="color:#39adb5;">&#39;</span><span style="color:#91b859;">canvas</span><span style="color:#39adb5;">&#39;</span><span>)
+</span><span style="font-style:italic;color:#7c4dff;">var </span><span>movie </span><span style="color:#39adb5;">= new </span><span>etro</span><span style="color:#39adb5;">.</span><span>Movie(</span><span style="color:#39adb5;">{</span><span> canvas )</span><span style="color:#39adb5;">}</span><span>)
+</span></code></pre>
+<p>From here, you can either set the <code>width</code> and <code>height</code> on the canvas or the
+movie to adjust the dimensions:</p>
+<pre data-lang="js" style="background-color:#fafafa;color:#80cbc4;" class="language-js "><code class="language-js" data-lang="js"><span>movie</span><span style="color:#39adb5;">.</span><span>width </span><span style="color:#39adb5;">= </span><span style="color:#f76d47;">200  </span><span style="font-style:italic;color:#ccd7da;">// also sets the canvas&#39;s width to 200
+</span><span>movie</span><span style="color:#39adb5;">.</span><span>height </span><span style="color:#39adb5;">= </span><span style="color:#f76d47;">200  </span><span style="font-style:italic;color:#ccd7da;">// also sets the canvas&#39;s height to 200
+</span></code></pre>
+<p>Now we have a 200x200 movie, but there are no layers so nothing will be
+rendered. In the <a href="../layers">next section</a>, we'll add a video clip to the
+movie.</p>
 
 
         </div>
