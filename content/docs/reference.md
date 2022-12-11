@@ -1,9 +1,9 @@
 +++
-title = "Tutorial"
+title = "Reference"
 template = "page.html"
 +++
 
-<div class="heading-text">Tutorial</div>
+<div class="heading-text">Reference</div>
 
 1. [Framework Overview](overview)
 2. [Movies](movies)
