@@ -98,6 +98,39 @@ import NavBar from '../components/NavBar.astro';
    .text-content h1 {
         font-size: 10rem; /* make the name etro on the showcase big  by multiplying 10 * root size */
     }
+
+
+<section class="showcase">
+  <video src={spaceVideo} muted autoplay loop></video>
+</section>
+
+<style>
+  .showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .card {
+    width: 300px;
+    padding: 0 20px;
+    text-align: center;
+    background-color: black;
+  }
+  video {
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
    
 
 
@@ -110,4 +143,4 @@ import NavBar from '../components/NavBar.astro';
 
 
 
-</style>
+
