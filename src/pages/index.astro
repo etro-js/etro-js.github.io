@@ -1,11 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import Card from '../components/Card.astro';
+import Card from '../components/Card.astro';
 import Showcase from '../components/Showcase.astro';
+import style from '../styles/global.css'
 ---
 
 <Layout title="Welcome to Astro.">
 	<Showcase/>
+	<section class="cards-grid">
+         <section class="card-1">
+			<Card  title="hi" body="description" href="/"  />
+
+		 </section>
+		 <section class="card-2">
+			<Card  title="hi" body="description" href="/"  />
+
+		 </section>		
+		 <section class="card-3">
+			<Card  title="hi" body="description" href="/"  />
+
+		 </section>
+
+
+	</section>
 	<!-- <main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions">
@@ -37,62 +54,43 @@ import Showcase from '../components/Showcase.astro';
 	</main> -->
 </Layout>
 
-<!-- <style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
-	h1 {
-		margin: 2rem 0;
-	}
-
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-
-	.link-card-grid {
+<style>
+	.cards-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+		grid-template-columns: 1fr 1fr;
+		gap: 50px 0;
+		width: 1000px;
+		margin: 0 auto;
+		margin-top: -100px;
+
 	}
-</style> -->
+	.card-1 {
+		background: red;
+		grid-column: 2;
+        
+	}
+	.card-2 {
+		grid-row: 2;
+		grid-column: 1;
+		background: orange;
+	}
+	.card-3 {
+		grid-row: 3;
+		grid-column: 2;
+
+		background: darkcyan;
+	}
+
+
+
+@media all and (max-width : 1000px){
+	.cards-grid {
+		width: 100vw;
+	}
+}
+
+
+@media all and (max-width : 890px){
+	
+}
+</style>

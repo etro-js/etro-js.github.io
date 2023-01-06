@@ -17,14 +17,34 @@ import NavBar from '../components/NavBar.astro';
 <section class="showcase">
     
     
-    <section class="scroll-sign">
-       <strong>|</strong>
+             
+      <!-- hero div   (using section instead of div  makes the site highly accessible and makes it easy for screen readers to identify the content) -->
+    <section class="hero-section">
+
+        <!-- The big logo on the hero section -->
+        <img class="big-logo" src={logo} alt="etro logo" />
+        <!-- end of the big logo on the hero section -->
+            <!-- text content section  -->
+        <section class="text-content">    
+            
+            <h1>
+               <span style="color : red ;">E</span><span style="color : orange;">tr</span><span style="color:darkcyan ;">o</span>
+            </h1>
+            <p>TypeScript video processing in the browser</p>
+
+        </section>
+        <!-- end of text content section -->
+     
     </section>
+
+    
+    <!-- <section class="scroll-sign">
+       <strong>|</strong>
+    </section> -->
 
 
 </section>
 
-<img class="big-logo" src={logo} alt="" />
 
         <video src={backgroudVid} muted autoplay loop></video>
 
@@ -32,25 +52,25 @@ import NavBar from '../components/NavBar.astro';
 <style>
   
     .showcase {
-        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 80vh;
         width: 100vw;
-        background: rgba(15, 1, 1, 0.509);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-filter: blur(5);
-backdrop-filter: blur(3px);
--webkit-backdrop-filter: blur(5px);
-z-index: 2000;
+    }
+
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        gap: 20px;
     }
 
     .big-logo {
-        position: absolute;
-        z-index:3000;
-        left: 37vw;
+        
+        left: 50px;
         top: 20vh;
         /* box-shadow: 0 4px 30px rgb(138, 0, 110) inset  !important; */
         animation-name: floating;
@@ -59,81 +79,34 @@ z-index: 2000;
     animation-timing-function: ease-in-out;
     
     }
+
+    .text-content {
+        display: flex; /*         -------                                                                                                                  */
+        flex-direction: column;  /*        |                                                                                                               */
+        justify-content: center; /*        ----- center texts and make it closer verticaly with justify content(center) and make its dirsection a column   */
+                                /*         |      justify content can only be used if the display is flex                                                  */
+                                 /* -------                                                                                                                */ 
+    }
+
+    .text-content p {
+        color: darkcyan;
+        font-weight: bold;
+        font-size:  1.5rem; /* rem makes changes the sized based on the specified root size and makes it increase the accessibility of the site */
+    }
      
 
-    
-   
-
-
-    @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px);  }
-    100%   { transform: translate(0, -0px); }   
-}
-    /* .showcase video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        z-index: 1;
-    } */
-    .card {
- width: 300px;
- padding: 0 20px;
- text-align: center;
- background-color: black;
-    }
-video {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0.5;
-        /* width: 100vw;
-        height: 100vh; */
-        object-fit: cover;
-        z-index: -1;
-}
-
-
-.scroll-sign {
-    position: absolute;
-    width: 30px ;
-   height: 50px;
-    border: 2px solid white;
-    color: white;
-    /* background-color: white; */
-    border-radius: 40%;
-    z-index: 3000;
-    bottom: 10%;
-    left: 49.5%;
-    text-align: center;
- 
-}
-
-
-
-.scroll-sign strong {
-    position: absolute;
-    left: 42.5%;
-    animation-name: scrolling;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    font-weight: bolder;
-}
-
-@keyframes scrolling {
-    0% { transform: translate(0,  0px); }
-    100%  { transform: translate(0, 20px); 
-    
+   .text-content h1 {
+        font-size: 10rem; /* make the name etro on the showcase big  by multiplying 10 * root size */
     }
    
-    /* 100%   { transform: translate(0, -0px); }    */
-}
+
+
+
+
+
+
+
+
 
 
 

@@ -11,13 +11,14 @@
   margin: 0;
   padding: 0;
 }
-
+.darkCyan {
+  background: darkcyan;
+}
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
-  background: black;
-  color: #333;
+ overflow-x: hidden;  /* hide the overflows on the x axis */
 }
 
 a {
