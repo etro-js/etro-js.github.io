@@ -27,3 +27,25 @@ Whether the layer should be used. The default value is `true`.
 ### `currentTime`
 
 The current time of the movie in seconds, relative to the start of the layer.
+
+## Methods
+
+### `attach(movie: Movie)`
+
+Called by the movie when the layer is added to its `layers` array.
+
+### `detach()`
+
+Called by the movie when the layer is removed from its `layers` array.
+
+### `start()`
+
+Called by the movie when the layer is activated.
+
+### `render()`
+
+Called by the movie when the layer should render to its internal canvas.
+
+### `stop()`
+
+Called by the movie when the layer is stopped.
