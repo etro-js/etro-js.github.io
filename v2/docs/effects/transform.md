@@ -15,7 +15,7 @@ const effect = new etro.effect.Transform({
 
 ## Inheritance
 
-`etro.effect.Transform` inherits from [`etro.effect.Base`](base).
+`etro.effect.Transform` inherits from [`etro.effect.Visual`](visual).
 
 ## Options
 

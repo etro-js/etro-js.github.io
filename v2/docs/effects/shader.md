@@ -40,7 +40,7 @@ const effect = new MyEffect(() => Math.random())
 
 ## Inheritance
 
-`etro.effect.Shader` inherits from [`etro.effect.Effect`](effect).
+`etro.effect.Shader` inherits from [`etro.effect.Visual`](visual).
 
 ## Options
 
