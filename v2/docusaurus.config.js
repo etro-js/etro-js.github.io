@@ -9,7 +9,7 @@ const config = {
   title: "Etro",
   tagline: "TypeScript video-editing framework for the web",
   url: "https://etrojs.dev",
-  baseUrl: "/",
+  baseUrl: "/v2",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logo.svg",
