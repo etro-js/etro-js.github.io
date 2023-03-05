@@ -4,29 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "reset": "git submodule deinit -f --all && git submodule update --init --recursive",
-    "start": "zola serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run reset && rm -rf public; zola build && cp CNAME public && cd etro && npm i && npm run doc && mv docs ../public/docs/api && git restore package-lock.json",
+    "build": "rm -r build && cd v1 && npm run build && mv public ../build && cd ../v2 && npm run build && mv build ../build/v2",
     "prepublish": "npm run build",
-    "publish": "gh-pages -d public"
+    "publish": "gh-pages -d public",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/etro-js/etro-site.git"
+    "url": "git+https://github.com/etro-js/etro-js.github.io.git"
   },
-  "author": "clabe45",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/etro-js/etro-site/issues"
+    "url": "https://github.com/etro-js/etro-js.github.io/issues"
   },
-  "homepage": "https://github.com/etro-js/etro-site#readme",
-  "dependencies": {
-    "jsdoc": "^3.6.6",
-    "jsdoc-export-default-interop": "^0.3.1",
-    "minami": "^1.2.3"
-  },
-  "devDependencies": {
-    "gh-pages": "^3.2.3"
-  }
+  "homepage": "https://github.com/etro-js/etro-js.github.io#readme"
 }

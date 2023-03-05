@@ -1,8 +1,6 @@
-[submodule "themes/juice"]
-	path = themes/juice
-	url = https://github.com/huhu/juice
-[submodule "etro"]
-	path = etro
-	url = https://github.com/etro-js/etro.git
-[submodule "etro/"]
+[submodule "v1/themes/juice"]
+	path = v1/themes/juice
+	url = https://github.com/huhu/juice.git
+[submodule "v1/etro"]
+	path = v1/etro
 	url = https://github.com/etro-js/etro.git
