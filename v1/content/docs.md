@@ -1,6 +1,6 @@
 +++
 title = "Docs"
-template = "page.html"
+template = "docs.html"
 weight = 0
 +++
 

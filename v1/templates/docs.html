@@ -1,0 +1,15 @@
+{% extends "juice/templates/page.html" %}
+{% block head %}
+<!-- Juice references /normalize.css, which doesn't work, so we reference ./normalics.css here -->
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" type="text/css" href="/juice-modified.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/logo.svg" />
+{% endblock head %}
+{% block header %}
+<div class="upgrade-banner text">
+    <a href="/v2/docs/intro">There is a new version of the docs!</a>
+</div>
+<header class="box-shadow">
+    {{ macros::render_header() }}
+</header>
+{% endblock header %}
