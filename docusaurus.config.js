@@ -90,6 +90,10 @@ const config = {
                 label: "Layers",
                 to: "/docs/layers/intro",
               },
+              {
+                label: "Effects",
+                to: "/docs/effects/intro",
+              }
             ],
           },
           {
