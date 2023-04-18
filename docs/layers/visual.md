@@ -101,7 +101,7 @@ The alpha value of the layer. The default value is `1`, which means the layer wi
 
 ### `effects`
 
-List of [Effects](/docs/category/effects) to apply to the layer. Although this is a read-only property, you can modify the array.
+List of [effects](/docs/category/effects) to apply to the layer. Although this is a read-only property, you can modify the array.
 
 ## Methods
 
@@ -111,7 +111,7 @@ Create a new Visual Layer.
 
 ### `addEffect(effect)`
 
-Add an [Effect](/docs/category/effects) to the layer.
+Add an [effect](/docs/category/effects) to the layer.
 
 ### `beginRender()`
 
