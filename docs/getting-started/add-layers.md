@@ -32,4 +32,4 @@ movie.layers.push(layer);
 
 ## Next
 
-Now that you have a layer, you can [add effects](/docs/getting-started/add-effects)!
+Now that you have a layer, you can [add effects](/docs/getting-started/add-effects).
