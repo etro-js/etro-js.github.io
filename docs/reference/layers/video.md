@@ -39,7 +39,7 @@ The `<video>` element to render.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -49,7 +49,7 @@ The x position to crop the video from. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -59,7 +59,7 @@ The y position to crop the video from. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -69,7 +69,7 @@ The width to crop the video to. The default value is `null`, which means the vid
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -83,7 +83,7 @@ The time to start playing the video from. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -93,7 +93,7 @@ Whether the video should be muted. The default value is `false`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 

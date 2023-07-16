@@ -27,7 +27,7 @@ const effect = new etro.effect.EllipticalMask({
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -37,7 +37,7 @@ The x-coordinate of the center of the ellipse.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -47,7 +47,7 @@ The y-coordinate of the center of the ellipse.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -57,7 +57,7 @@ The horizontal radius of the ellipse.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -67,7 +67,7 @@ The vertical radius of the ellipse.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -77,7 +77,7 @@ The rotation angle in radians. Defaults to `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -87,7 +87,7 @@ The start angle in radians. Defaults to `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -97,7 +97,7 @@ The end angle in radians. Defaults to `2 * Math.PI`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 

@@ -88,11 +88,11 @@ const config = {
               },
               {
                 label: "Layers",
-                to: "/docs/layers/intro",
+                to: "/docs/reference/layers/intro",
               },
               {
                 label: "Effects",
-                to: "/docs/effects/intro",
+                to: "/docs/reference/effects/intro",
               },
               {
                 label: "Tutorials",

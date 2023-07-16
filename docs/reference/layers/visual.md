@@ -31,7 +31,7 @@ const layer = new etro.layer.Visual({
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -41,7 +41,7 @@ The x position of the layer. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -51,7 +51,7 @@ The y position of the layer. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -61,7 +61,7 @@ The width of the layer. The default value is `null`, which means the layer will 
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -71,7 +71,7 @@ The height of the layer. The default value is `null`, which means the layer will
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -81,7 +81,7 @@ The background color of the layer. The default value is `null`, which means the 
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -91,7 +91,7 @@ The border of the layer. The default value is `null`, which means the layer will
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 

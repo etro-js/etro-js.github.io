@@ -37,7 +37,7 @@ The `<img>` element to render.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -47,7 +47,7 @@ The x position to crop the image from. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -57,7 +57,7 @@ The y position to crop the image from. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 
@@ -67,7 +67,7 @@ The width to crop the image to. The default value is `null`, which means the ima
 
 :::tip
 
-This is a [Dynamic Property](/docs/dynamic-properties).
+This is a [Dynamic Property](/docs/reference/dynamic-properties).
 
 :::
 

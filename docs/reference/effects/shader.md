@@ -2,7 +2,7 @@
 
 `etro.effect.Shader` is the base class for all effects that render the target with a custom GLSL fragment shader.
 
-When using this effect, you need to provide a fragment shader source and a list of uniforms. The uniforms are automatically updated when the effect is applied. There needs to be a property with the same name as each custom uniform in the effect class. The property can be a [`Dynamic`](/docs/dynamic-properties) or a regular value.
+When using this effect, you need to provide a fragment shader source and a list of uniforms. The uniforms are automatically updated when the effect is applied. There needs to be a property with the same name as each custom uniform in the effect class. The property can be a [`Dynamic`](/docs/reference/dynamic-properties) or a regular value.
 
 ## Usage
 
