@@ -14,7 +14,7 @@ change to a feature branch on the fork, and open a PR.
 
 ## Getting Started
 
-This site uses the [DOcusaurus 2] static docs site generator.
+This site uses the [Docusaurus 2] static docs site generator.
 
 ### Installation
 
