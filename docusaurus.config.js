@@ -93,6 +93,10 @@ const config = {
               {
                 label: "Effects",
                 to: "/docs/effects/intro",
+              },
+              {
+                label: "Tutorials",
+                to: "/docs/category/tutorials",
               }
             ],
           },
