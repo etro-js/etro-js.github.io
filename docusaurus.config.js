@@ -67,7 +67,7 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial",
+            label: "Getting Started",
           },
           {
             href: "https://github.com/etro-js/etro",
