@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunketro_site_2=self.webpackChunketro_site_2||[]).push([[929],{9090:e=>{e.exports=JSON.parse('{"title":"Effects","slug":"/category/effects","permalink":"/docs/category/effects","navigation":{"previous":{"title":"Visual Layer","permalink":"/docs/layers/visual"},"next":{"title":"Introduction","permalink":"/docs/effects/intro"}}}')}}]);
