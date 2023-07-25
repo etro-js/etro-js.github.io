@@ -91,7 +91,7 @@ function App() {
 
 ## Adding an effect
 
-Now, we'll [write our own effect](../reference/effects/custom).
+Now, we'll [write our own effect](custom-glsl-effect).
 
 Create a new file `src/effect.js`:
 
