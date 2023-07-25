@@ -34,7 +34,7 @@ const layer = new etro.layer.Text({
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -44,7 +44,7 @@ The text to render.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -54,7 +54,7 @@ The color of the text. The default value is `new etro.Color(0, 0, 0, 1)`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -64,7 +64,7 @@ The CSS font to use. The default value is `'10px sans-serif'`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -74,7 +74,7 @@ The x position to render the text at. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -84,7 +84,7 @@ The y position to render the text at. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -94,7 +94,7 @@ The alignment of the text. The default value is `'left'`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -104,7 +104,7 @@ The baseline of the text. The default value is `'alphabetic'`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 

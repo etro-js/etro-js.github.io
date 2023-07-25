@@ -28,7 +28,7 @@ const effect = new etro.effect.ChromaKey({
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -38,7 +38,7 @@ The color to remove. Defaults to black (`{ r: 0, g: 0, b: 0 }`).
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -48,7 +48,7 @@ How much error to allow (ranging from 0 to 255). Defaults to 0.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 

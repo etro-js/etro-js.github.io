@@ -26,7 +26,7 @@ const effect = new etro.effect.Contrast({
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 

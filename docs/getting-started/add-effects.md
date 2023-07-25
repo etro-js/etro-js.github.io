@@ -30,4 +30,4 @@ movie.effects.push(effect);
 
 ## Next
 
-Now that you have an effect, you can [render the movie](/docs/getting-started/render-the-movie)!
+Now that you have an effect, you can [render the movie](render-the-movie)!

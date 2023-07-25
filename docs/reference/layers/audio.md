@@ -34,7 +34,7 @@ The time to start playing the audio from. The default value is `0`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
@@ -44,7 +44,7 @@ Whether the audio is muted. The default value is `false`.
 
 :::tip
 
-This is a [Dynamic Property](/docs/reference/dynamic-properties).
+This is a [Dynamic Property](../dynamic-properties).
 
 :::
 

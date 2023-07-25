@@ -19,4 +19,4 @@ yarn add etro
 
 ## Next
 
-Now that you have Etro installed, you can [create a movie](/docs/getting-started/create-a-movie)!
+Now that you have Etro installed, you can [create a movie](create-a-movie)!

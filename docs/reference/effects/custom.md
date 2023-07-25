@@ -34,7 +34,7 @@ export class ChromaKey extends etro.effect.Shader {
 }
 ```
 
-The constructor takes a [dynamic](/docs/reference/dynamic-properties) number that will be used to set the threshold uniform. The `etro.effect.Shader` class takes a single argument, which is an object containing the shader source code. We will fill this in in the next step.
+The constructor takes a [dynamic](../dynamic-properties) number that will be used to set the threshold uniform. The `etro.effect.Shader` class takes a single argument, which is an object containing the shader source code. We will fill this in in the next step.
 
 ## Writing the Shader
 

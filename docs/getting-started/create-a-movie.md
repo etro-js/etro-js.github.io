@@ -44,4 +44,4 @@ const movie = new etro.Movie({
 
 ## Next
 
-Now that you have a movie, you can [add layers](/docs/getting-started/add-layers).
+Now that you have a movie, you can [add layers](add-layers).
