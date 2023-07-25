@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Dynamic Properties
 
-Dynamic properties are generic values that can be updated at runtime. There are three types of dynamic properties:
+Dynamic properties are generic values that are automatically evaluated at runtime. There are three types of dynamic properties:
 
 - Constant values
 - Keyframe animations
@@ -12,7 +12,7 @@ Dynamic properties are generic values that can be updated at runtime. There are 
 
 ## Constant Values
 
-Constant values are the simplest type of dynamic properties. They are just regular values:
+Constant values are the simplest type of dynamic properties. They do not change unless they are manually replaced with a new value.
 
 ```ts
 const effect = new etro.effect.Channels({
@@ -22,6 +22,13 @@ const effect = new etro.effect.Channels({
     b: 0,
   },
 })
+
+// The only way to update constant values is to manually replace them
+effect.factors = {
+  r: 0,
+  g: 1,
+  b: 1,
+}
 ```
 
 ## Keyframe Animations
@@ -45,7 +52,7 @@ The above example will animate the red channel from 1 to 0 over the course of on
 
 ## Functions
 
-Functions are functions that are called every frame to get the current value. They are useful for creating custom animations:
+Functions are JavaScript functions that are called every frame to get the current value. They are useful for creating custom animations:
 
 ```ts
 const effect = new etro.effect.Channels({
@@ -61,9 +68,9 @@ const effect = new etro.effect.Channels({
 
 The above example will animate the red channel to a random value every frame.
 
-## Usage in Layers and Effects
+## Custom Classes
 
-To add a dynamic property to your layer or effect, use the `Dynamic` generic type. To evaluate the property on a given frame, use `etro.val()`.
+To add a dynamic property to your custom layer or effect, use the `Dynamic` generic type. To evaluate the property on a given frame, use `etro.val()`.
 
 ```ts
 class MyEffect extends etro.effect.Base {
