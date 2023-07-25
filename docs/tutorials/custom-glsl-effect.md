@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Writing a Visual Effect
 
 This tutorial will walk you through the process of creating a custom GLSL effect. We will be creating a custom chroma key effect that will turn a green screen into a transparent background. Etro includes a default chroma key effect, but this tutorial will show you how to create your own.
