@@ -111,7 +111,7 @@ Create a new Visual Layer.
 
 ### `addEffect(effect)`
 
-Add an [effect](../../effects) to the layer.
+Add an [effect](../../category/effects) to the layer.
 
 ### `beginRender()`
 
