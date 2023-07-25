@@ -22,7 +22,7 @@ npm install etro
 
 ## Creating the movie
 
-Now, we'll create a new movie, add a webcam layer to it, and play it.
+Now, we'll create a new [movie](../reference/movie), add a [video layer](../reference/layers/video) to it, and play it.
 
 Create a new file `src/Movie.js`:
 
@@ -91,7 +91,7 @@ function App() {
 
 ## Adding an effect
 
-Now, we'll add an effect to the webcam layer.
+Now, we'll [write our own effect](../reference/effects/custom).
 
 Create a new file `src/effect.js`:
 
