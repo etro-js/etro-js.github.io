@@ -87,6 +87,10 @@ const config = {
                 to: "/docs/category/getting-started",
               },
               {
+                label: "Movies",
+                to: "/docs/reference/movie",
+              },
+              {
                 label: "Layers",
                 to: "/docs/category/layers",
               },
