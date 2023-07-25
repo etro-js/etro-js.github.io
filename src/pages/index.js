@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} - ${siteConfig.tagline}`}
-      description="Description will go into a meta tag in <head />"
+      description="Composite video content, write custom effects and stream with WebRTC right in the browser"
     >
       <HomepageHeader />
       <main>
