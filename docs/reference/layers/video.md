@@ -1,6 +1,6 @@
 # Video Layer
 
-`etro.layer.Video` renders a `<video>` element to the movie.
+`etro.layer.Video` renders a video clip to the movie.
 
 ## Usage
 
@@ -8,7 +8,7 @@
 const layer = new etro.layer.Video({
   startTime: 0,
   duration: 5,
-  source: new Video(),
+  source: '<link to video>', // also accepts an `HTMLVideoElement`
   sourceX: 0, // default: 0
   sourceY: 0, // default: 0
   sourceWidth: 400, // default: null (full width)
@@ -33,7 +33,7 @@ const layer = new etro.layer.Video({
 
 ### `source`
 
-The `<video>` element to render.
+The `<video>` element or path to render.
 
 ### `sourceX`
 
