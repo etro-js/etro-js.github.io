@@ -31,6 +31,7 @@ There are several ways to access a movie's output:
 
 ```ts
 await movie.play({
+  duration: 3, // how long to play for, in seconds (by default, the movie will play to the end)
   onStart: () => {
     console.log('All resources are loaded, and playback has started.');
   }, // `onStart` is optional
