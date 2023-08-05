@@ -1,6 +1,6 @@
 # Audio Layer
 
-`etro.layer.Audio` plays audio from an `<audio>` element.
+`etro.layer.Audio` plays audio from an audio clip.
 
 ## Usage
 
@@ -8,7 +8,7 @@
 const layer = new etro.layer.Audio({
   startTime: 0,
   duration: 3,
-  source: new Audio('audio.mp3'),
+  source: '<link to audio>',
   sourceStartTime: 0, // default: 0
   muted: false, // default: false
   volume: 1, // default: 1
@@ -24,7 +24,7 @@ const layer = new etro.layer.Audio({
 
 ### `source` (required)
 
-The `<audio>` element to play.
+The `<audio>` element or path to play.
 
 ### `sourceStartTime`
 
