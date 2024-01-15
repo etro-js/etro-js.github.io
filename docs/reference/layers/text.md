@@ -14,13 +14,18 @@ const layer = new etro.layer.Text({
   width: 400, // default: null (full width)
   height: 400, // default: null (full height)
   opacity: 1, // default: 1
-  color: etro.parseColor('black'), // default: new etro.Color(0, 0, 0, 1)
+  color: etro.parseColor('white'), // default: new etro.Color(0, 0, 0, 1)
   font: '10px sans-serif', // default: '10px sans-serif'
   textX: 20, // default: 0
   textY: 20, // default: 0
   textAlign: 'left', // default: 'left'
   textBaseline: 'alphabetic', // default: 'alphabetic'
   textDirection: 'ltr', // default: 'ltr'
+  textStroke: { // default: null (no stroke)
+    color: etro.parseColor('black'),
+    position: TextStrokePosition.Outside, // default: TextStrokePosition.Outside
+    thickness: 2, // default: 1
+  },
 });
 ```
 
@@ -109,3 +114,29 @@ This is a [Dynamic Property](../dynamic-properties).
 :::
 
 The direction of the text. The default value is `'ltr'`.
+
+### `textStroke`
+
+:::tip
+
+This is a [Dynamic Property](../dynamic-properties).
+
+:::
+
+The text's outline. The default value is `null`, or no outline.
+
+### `textStroke.color`
+
+A `Color` instance for the outline. Required in order to render the text's outline.
+
+### `textStroke.position`
+
+Where to render the outline, relative to the text. Can be set to any of the following:
+
+- `TextStrokePosition.Outside` (default)
+- `TextStrokePosition.Center`
+- `TextStrokePosition.Inside`
+
+### `textStroke.thickness`
+
+Positive number indicating the thickness of the outline. The default value is `1.0`.
