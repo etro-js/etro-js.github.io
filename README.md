@@ -7,10 +7,11 @@
 First off, thanks for wanting to contribute to Etro's documentation! Every
 contribution to this site helps make Etro more popular and accessible. There are
 a few ways you can help:
+
 - If you would like to request a change to be made to the site, please open an
-[issue].
+  [issue].
 - If you would like to make the change yourself, [fork] this repo, push the
-change to a feature branch on the fork, and open a PR.
+  change to a feature branch on the fork, and open a PR.
 
 ## Getting Started
 
