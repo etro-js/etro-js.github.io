@@ -4,4 +4,6 @@ sidebar_position: 1
 
 # Introduction
 
-Etro is a TypeScript library for creating videos in the browser. It uses a list of layers and a list of effects to render the video to a `<canvas>` element and an [audio context](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext). You can also record the movie to a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob).
+Etro is a frontend video-processing framework. You can composite, concatenate, filter, crop and trim image, audio, video and text content. The result can be rendered to a `<canvas>` element and an [audio context](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext), streamed with WebRTC or recorded to a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob). You can create custom sources and filters to fit your use case.
+
+Etro can be used with React, Vue, Svelte, Angular, and plain JavaScript.
