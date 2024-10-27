@@ -2,7 +2,7 @@
 
 > Documentation for the [Etro] video editing framework
 
-## Contributing
+## Getting Started
 
 First off, thanks for contributing to Etro's documentation! Every contribution
 helps make Etro more popular and accessible. There are a few ways you can help:
@@ -11,8 +11,6 @@ helps make Etro more popular and accessible. There are a few ways you can help:
   [issue].
 - If you would like to make the change yourself, [fork] this repo, push the
   change to a feature branch on the fork, and open a PR.
-
-## Getting Started
 
 This site uses the [Docusaurus 2] static docs site generator.
 
