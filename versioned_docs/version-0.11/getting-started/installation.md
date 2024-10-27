@@ -15,7 +15,3 @@ _or_
 ```bash
 yarn add etro
 ```
-
-## Next
-
-Now that you have Etro installed, you can [create a movie](create-a-movie)!
