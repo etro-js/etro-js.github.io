@@ -4,17 +4,13 @@ sidebar_position: 3
 
 # Add Layers
 
-In this section, you'll learn how to add layers to your movie.
-
 ## What is a Layer?
 
-A layer is a visual and/or audio element that you can add to a movie. You can add multiple layers to a movie to create complex compositions.
-
-Etro comes with a few built-in layers, but you can also create your own custom layers.
+A layer is a piece of visual and/or audio source content. Layers can be concatenated and composited onto the movie. Etro comes with a few built-in layers, but you can also create your own.
 
 ## Add a Layer
 
-To add a solid color layer to your movie, you can use the `etro.layer.Visual` class:
+Use `etro.layer.Visual` to add a solid color layer to your movie:
 
 ```js
 const layer = new etro.layer.Visual({
@@ -24,12 +20,8 @@ const layer = new etro.layer.Visual({
 });
 ```
 
-Then, you can add the layer to your movie:
+Then, add the layer to the movie to include it in the final output:
 
 ```js
 movie.layers.push(layer);
 ```
-
-## Next
-
-Now that you have a layer, you can [add effects](add-effects).
