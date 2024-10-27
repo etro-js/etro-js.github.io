@@ -4,142 +4,186 @@ sidebar_position: 1
 
 # Movies
 
-In Etro, movies are video-processing projects. A movie serves as a container for compositing layers, applying global effects to the result and outputting the final result.
+In Etro, movies composite layers and apply global effects.
 
 ## Constructor
 
-The constructor requires a `<canvas>` element to draw on. You can provide the following options in addition:
+**Options:**
+
+- `canvas`: HTML `<canvas>` element to draw to. Required.
+- `actx`: Web Audio rendering context to play all audio layers through. Defaults to a new context that plays through the default output device.
+- `background`: Background color to fill the canvas with before drawing the visual layers. Defaults to `#000`.
+- `repeat`: If `true`, playback loops endlessly while playing or streaming (but not while recording). Defaults to `false`.
+
+**Example:**
 
 ```ts
 const movie = new etro.Movie({
-  canvas: document.querySelector("canvas"), // HTML canvas element to draw on
-  actx: new AudioContext(), // Web Audio context to play through (creates a new context with default settings if omitted)
-  background: etro.parseColor("#f0f"), // background color (dynamic, defaults to black)
-  repeat: false, // whether to loop forever while playing and streaming (defaults to false)
+  canvas: document.querySelector("canvas"),
 });
 ```
 
 ## Rendering
 
-There are several ways to access a movie's output:
-
-- **Playing**: Draws all the movie's visual layers to the canvas and plays all its audio layers to the audio context in real time.
-- **Streaming**: Draws the movie to the canvas and plays it through the audio context and provides a real time WebRTC stream.
-- **Recording**: Draws the movie to the canvas and plays it through the audio context and saves the result to a video or audio blob.
-- **Refreshing**: Draws a single frame to the canvas.
+There are several ways to access a movie's output.
 
 ### `play()`
 
+Draws all the movie's visual layers to the canvas and plays all its audio layers to the audio context in real time.
+
+**Options:**
+
+- `duration`: How long to play for, in seconds. By default, the movie plays to the end.
+- `onStart(): void`: Optional callback function that is called when the movie is fully loaded and starts playing.
+
+**Returns:**
+
+- `Promise<void>`: Resolves when the movie has finished playing.
+
+**Example:**
+
 ```ts
 await movie.play({
-  duration: 3, // how long to play for, in seconds (by default, the movie will play to the end)
+  duration: 3,
   onStart: () => {
-    console.log("All resources are loaded, and playback has started.");
-  }, // `onStart` is optional
+    // Playback has started
+  },
 });
-console.log("The movie is done playing");
+// Playback has stopped
 ```
 
 ### `stream()`
 
+Draws the movie to the canvas, plays it through the audio context and sends the result to a new WebRTC stream.
+
+**Options:**
+
+- `frameRate`: Max video frames per second.
+- `duration`: How long to stream for, in seconds. By default, the movie streams to the end.
+- `video`: If `true`, the movie's visual layers are included in the stream. Defaults to `true`.
+- `audio`: If `true`, the movie's audio layers are included in the stream. Defaults to `true`.
+- `onStart(stream: MediaStream): void`: Optional callback function that is called when the movie is fully loaded and starts streaming.
+
+**Returns:**
+
+- `Promise<void>`: Resolves when the movie has finished streaming.
+
+**Example:**
+
 ```ts
 await movie.stream({
-  frameRate: 60, // fps for the stream's video tracks
-  duration: 5, // how long to stream, in seconds (by default, the movie will stream to the end)
-  video: true, // whether to render visual layers (defaults to true)
-  audio: true, // whether to render layers with audio (defaults to true)
-  onStart: (stream: MedaiaStream) => {
-    console.log("All resources are loaded, and streaming has begun.");
-    // Process stream
+  frameRate: 60,
+  duration: 5,
+  video: true,
+  audio: true,
+  onStart: (stream: MediaStream) => {
+    // Streaming has started
   },
 });
-console.log("The movie is done streaming");
+// Streaming has stopped
 ```
 
 ### `record()`
 
+Draws the movie to the canvas, plays it through the audio context and saves the result as a video or audio blob in memory.
+
+**Options:**
+
+- `frameRate`: Max video frames per second.
+- `duration`: How long to record for, in seconds. By default, the movie records to the end.
+- `type`: MIME type for the recording. Defaults to `video/webm`.
+- `video`: If `true`, the movie's visual layers are included in the recording. Defaults to `true`.
+- `audio`: If `true`, the movie's audio layers are included in the recording. Defaults to `true`.
+- `onStart(recorder: MediaRecorder): void`: Optional callback function that is called when the movie is fully loaded and starts recording.
+
+**Returns:**
+
+- `Promise<Blob>`: Resolves with the recording.
+
+**Example:**
+
 ```ts
 const blob = await movie.record({
-  frameRate: 30, // fps for the recording's video track
-  duration: undefined, // how long to record, in seconds (by default, the movie will record to the end)
-  type: "video/webm;codecs=vp8", // MIME type for the recording (defaults to 'video/webm')
-  video: true, // whether to render visual layers (defaults to true)
-  audio: true, // whether to render layers with audio (defaults to true)
+  frameRate: 30,
+  duration: undefined,
+  type: "video/webm;codecs=vp8",
+  video: true,
+  audio: true,
   onStart: (recorder: MediaRecorder) => {
-    console.log("All resources are loaded, and recording has begun.");
-  }, // `onStart` is optional
+    // Recording has started
+  },
 });
-console.log(`Done. The recording is ${blob.size} bytes long`);
+// The recording has completed
 ```
 
 ### `refresh()`
 
-To draw a single frame to the canvas, run:
+Draws a single frame to the canvas, without playing any audio.
+
+**Returns:**
+
+- `Promise<void>`: Resolves when the frame has been loaded and drawn to the canvas.
+
+**Example:**
 
 ```ts
 await movie.refresh();
-console.log("The current frame has been loaded and rendered.");
+// The current frame has been loaded and drawn to the canvas.
 ```
 
 ## Advanced playback control
 
+### `pause()`
+
+Stops playback.
+
+### `stop()`
+
+Stops playback and resets `currentTime` to the beginning of the movie.
+
 ### `seek()`
 
-Used to update the movie's `currentTime`:
+Exactly the same as setting the [`currentTime` property](#currenttime):
 
 ```ts
 movie.seek(0);
 ```
 
-### `pause()`
-
-Used to stop playback on demand.
-
-### `stop()`
-
-Used to stop playback and reset the `currentTime` to zero on demand.
-
 ## Properties
 
 ### `layers` (readonly, mutable)
 
-Array proxy which [layers](../category/layers) can be added to, removed from and accessed:
-
-```ts
-movie.layers.push(new etro.layer.Video({ ... }));
-```
+[Layers](../category/layers) that are composited to form the movie's output.
 
 ### `effects` (readonly, mutable)
 
-Array proxy for [effects](../category/effects) that are applied globally after all the layers are composited:
+[Effects](../category/effects) that are applied globally after all the layers are composited.
 
-```ts
-console.log(movie.effects);
-```
+### `currentTime`
 
-### `currentTime` (readonly)
-
-Returns the current playback position (in seconds).
+Current playback position (in seconds). Setting this property seeks the movie to the new position.
 
 ### `duration` (readonly)
 
-Returns the movie's duration (the max end time of its layers).
+The movie's duration (the last end time of all its layers).
 
 ### `paused` (readonly)
 
-Returns true if the movie is paused and false if it's playing, streaming or recording.
+True if the movie is paused or false if it is playing, streaming or recording.
 
 ### `ended` (readonly)
 
-Returns true if the movie played, streamed or recorded to the end.
+True if the movie played, streamed or recorded to the end without interruption.
 
 ### `ready` (readonly)
 
-Returns true if the movie is ready to play, that is, if enough of the resources belonging to all its layers and effects are loaded to play through. The movie will automatically wait until it is ready before playing, streaming, recording and refreshing, and it will temporarily pause whenever a resource becomes unavailable.
+True if the movie is ready to play, that is, if enough of the resources belonging to all its layers and effects are loaded to play through.
+
+_The movie will automatically wait until it is ready before playing, streaming, recording and refreshing, and it will temporarily pause whenever a resource becomes unavailable._
 
 ### `canvas` (readonly)
 
-HTML canvas element that the movie renders to.
+HTML `<canvas>` element to render the movie to.
 
 ### `cctx` (readonly)
 
@@ -147,11 +191,11 @@ Convenience getter for the canvas's 2D canvas rendering context.
 
 ### `actx` (readonly)
 
-The Web Audio rendering context used to direct all audio output.
+Web Audio rendering context used to play all audio layers.
 
 ### `width` / `height`
 
-Gets or sets the width or height of the movie's rendering canvas.
+Dimensions of the movie.
 
 ### `background`
 
@@ -161,8 +205,8 @@ This is a [Dynamic Property](dynamic-properties).
 
 :::
 
-Background color to render over the canvas before drawing the visual layers.
+Background color to fill the canvas with before drawing the visual layers.
 
 ### `repeat`
 
-Whether to endlessly loop playback when playing, streaming and recording.
+If `true`, playback loops endlessly while playing or streaming (but not while recording).
