@@ -30,6 +30,26 @@ $ npm run start
 
 This command starts a local development server and open up a browser window.
 
+## Versioning
+
+Etro follows [Semantic Versioning]. The latest three minor releases are
+documented ([related Docusaurus docs][Docusaurus versioning]). The documentation
+for the latest release can be found in [docs/](docs/). The previous two releases
+can be found in [versioned_docs/](versioned_docs/) (see [configuring Docusaurus
+versioning]).
+
+When a new minor version is released:
+
+1. Run `npm run docusaurus docs:version <version>` to copy the current docs to
+   the versioned folder for the previous release.
+2. Update the new documentation in [docs/](docs/) to reflect the changes in the
+   latest release.
+3. Remove the versioned folder for the fourth previous release.
+
+When documenting an existing feature, please add the documentation to both
+[docs/](docs/) and the relevant versioned folders (e.g.
+[versioned_docs/version-0.11/](versioned_docs/version-0.11/)).
+
 ## License
 
 Licensed under the Apache License 2.0
@@ -38,3 +58,6 @@ Licensed under the Apache License 2.0
 [Fork]: https://github.com/etro-js/etro-js.github.io/fork
 [issue]: https://github.com/etro-js/etro-js.github.io/issues
 [Docusaurus 2]: https://docusaurus.io
+[Semantic Versioning]: https://semver.org/
+[Docusaurus versioning]: https://docusaurus.io/docs/versioning
+[configuring Docusaurus versioning]: https://docusaurus.io/docs/versioning#configuring-versioning-behavior
