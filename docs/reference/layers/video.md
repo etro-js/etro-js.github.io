@@ -13,6 +13,10 @@ const layer = new etro.layer.Video({
   sourceY: 0, // default: 0
   sourceWidth: 400, // default: null (full width)
   sourceHeight: 400, // default: null (full height)
+  destX: 0, // default: 0
+  destY: 0, // default: 0
+  destWidth: 400, // default: null (full width)
+  destHeight: 400, // default: null (full height)
   sourceStartTime: 0, // default: 0
   x: 0, // default: 0
   y: 0, // default: 0
@@ -74,6 +78,46 @@ This is a [Dynamic Property](../dynamic-properties).
 :::
 
 The height to crop the video to. The default value is `null`, which means the video will be cropped to the full height of the video.
+
+### `destX`
+
+:::tip
+
+This is a [Dynamic Property](../dynamic-properties).
+
+:::
+
+Defines the x position of the rendered image within the layer’s bounding box. The default value is `0`.
+
+### `destY`
+
+:::tip
+
+This is a [Dynamic Property](../dynamic-properties).
+
+:::
+
+Defines the y position of the rendered image within the layer’s bounding box. The default value is `0`.
+
+### `destWidth`
+
+:::tip
+
+This is a [Dynamic Property](../dynamic-properties).
+
+:::
+
+Defines the width of the rendered image within the layer’s bounding box. The default value is `null`, which means the image will be rendered to the full width within the bounding area.
+
+### `destHeight`
+
+:::tip
+
+This is a [Dynamic Property](../dynamic-properties).
+
+:::
+
+Defines the height of the rendered image within the layer’s bounding box. The default value is `null`, which means the image will be rendered to the full height within the bounding area.
 
 ### `sourceStartTime`
 
