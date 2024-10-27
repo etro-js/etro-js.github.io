@@ -5,7 +5,7 @@
 ## Usage
 
 ```js
-import etro from 'etro';
+import etro from "etro";
 
 const layer = new etro.layer.Image({
   startTime: 0,

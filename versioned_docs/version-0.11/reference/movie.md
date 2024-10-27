@@ -12,16 +12,17 @@ The constructor requires a `<canvas>` element to draw on. You can provide the fo
 
 ```ts
 const movie = new etro.Movie({
-  canvas: document.querySelector('canvas'), // HTML canvas element to draw on
+  canvas: document.querySelector("canvas"), // HTML canvas element to draw on
   actx: new AudioContext(), // Web Audio context to play through (creates a new context with default settings if omitted)
-  background: etro.parseColor('#f0f'), // background color (dynamic, defaults to black)
-  repeat: false // whether to loop forever while playing and streaming (defaults to false)
+  background: etro.parseColor("#f0f"), // background color (dynamic, defaults to black)
+  repeat: false, // whether to loop forever while playing and streaming (defaults to false)
 });
 ```
 
 ## Rendering
 
 There are several ways to access a movie's output:
+
 - **Playing**: Draws all the movie's visual layers to the canvas and plays all its audio layers to the audio context in real time.
 - **Streaming**: Draws the movie to the canvas and plays it through the audio context and provides a real time WebRTC stream.
 - **Recording**: Draws the movie to the canvas and plays it through the audio context and saves the result to a video or audio blob.
@@ -33,10 +34,10 @@ There are several ways to access a movie's output:
 await movie.play({
   duration: 3, // how long to play for, in seconds (by default, the movie will play to the end)
   onStart: () => {
-    console.log('All resources are loaded, and playback has started.');
+    console.log("All resources are loaded, and playback has started.");
   }, // `onStart` is optional
 });
-console.log('The movie is done playing');
+console.log("The movie is done playing");
 ```
 
 ### `stream()`
@@ -48,11 +49,11 @@ await movie.stream({
   video: true, // whether to render visual layers (defaults to true)
   audio: true, // whether to render layers with audio (defaults to true)
   onStart: (stream: MedaiaStream) => {
-    console.log('All resources are loaded, and streaming has begun.');
+    console.log("All resources are loaded, and streaming has begun.");
     // Process stream
   },
 });
-console.log('The movie is done streaming');
+console.log("The movie is done streaming");
 ```
 
 ### `record()`
@@ -61,11 +62,11 @@ console.log('The movie is done streaming');
 const blob = await movie.record({
   frameRate: 30, // fps for the recording's video track
   duration: undefined, // how long to record, in seconds (by default, the movie will record to the end)
-  type: 'video/webm;codecs=vp8', // MIME type for the recording (defaults to 'video/webm')
+  type: "video/webm;codecs=vp8", // MIME type for the recording (defaults to 'video/webm')
   video: true, // whether to render visual layers (defaults to true)
   audio: true, // whether to render layers with audio (defaults to true)
   onStart: (recorder: MediaRecorder) => {
-    console.log('All resources are loaded, and recording has begun.');
+    console.log("All resources are loaded, and recording has begun.");
   }, // `onStart` is optional
 });
 console.log(`Done. The recording is ${blob.size} bytes long`);
@@ -77,7 +78,7 @@ To draw a single frame to the canvas, run:
 
 ```ts
 await movie.refresh();
-console.log('The current frame has been loaded and rendered.');
+console.log("The current frame has been loaded and rendered.");
 ```
 
 ## Advanced playback control
@@ -113,7 +114,7 @@ movie.layers.push(new etro.layer.Video({ ... }));
 Array proxy for [effects](../category/effects) that are applied globally after all the layers are composited:
 
 ```ts
-console.log(movie.effects)
+console.log(movie.effects);
 ```
 
 ### `currentTime` (readonly)

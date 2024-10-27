@@ -12,9 +12,10 @@ const layer = new etro.layer.Visual({
   y: 0, // default: 0
   width: 400, // default: null (full width)
   height: 400, // default: null (full height)
-  background: etro.parseColor('red'), // default: null (transparent)
-  border: { // default: null (no border)
-    color: etro.parseColor('black'),
+  background: etro.parseColor("red"), // default: null (transparent)
+  border: {
+    // default: null (no border)
+    color: etro.parseColor("black"),
     thickness: 2,
   },
   opacity: 1, // default: 1

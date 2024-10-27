@@ -11,21 +11,21 @@ Before we get started, let's define a term that will be used throughout this tut
 The first step is to create a new class that extends `etro.effect.Shader`. This class will be responsible for creating the shader and setting up the uniforms. The class should look something like this:
 
 ```ts
-import etro from 'etro'
+import etro from "etro";
 
 export class ChromaKey extends etro.effect.Shader {
-  color: Dynamic<etro.Color>
-  threshold: Dynamic<number>
+  color: Dynamic<etro.Color>;
+  threshold: Dynamic<number>;
 
   constructor({
     color = { r: 0, g: 0, b: 0 },
     threshold = 0,
   }: {
-    color?: Dynamic<etro.Color>
-    threshold?: Dynamic<number>
+    color?: Dynamic<etro.Color>;
+    threshold?: Dynamic<number>;
   }) {
-    this.color = color
-    this.threshold = threshold
+    this.color = color;
+    this.threshold = threshold;
   }
 }
 ```
@@ -62,18 +62,18 @@ The first line is a GLSL directive that specifies the precision of the floating 
 Now that we have the shader code, we can fill in the constructor:
 
 ```ts
-import etro from 'etro'
+import etro from "etro";
 
 export class ChromaKey extends etro.effect.Shader {
-  color: Dynamic<etro.Color>
-  threshold: Dynamic<number>
+  color: Dynamic<etro.Color>;
+  threshold: Dynamic<number>;
 
   constructor({
     color = { r: 0, g: 0, b: 0 },
     threshold = 0,
   }: {
-    color?: Dynamic<etro.Color>
-    threshold?: Dynamic<number>
+    color?: Dynamic<etro.Color>;
+    threshold?: Dynamic<number>;
   }) {
     super({
       fragment: `
@@ -95,13 +95,13 @@ export class ChromaKey extends etro.effect.Shader {
         }
       `,
       uniforms: {
-        color: '3fv',
-        threshold: '1f',
+        color: "3fv",
+        threshold: "1f",
       },
-    })
+    });
 
-    this.color = color
-    this.threshold = threshold
+    this.color = color;
+    this.threshold = threshold;
   }
 }
 ```
@@ -113,32 +113,32 @@ The `Shader` class will automatically evaluate the `color` and `threshold` prope
 Now that we have created the effect, we can use it to create a movie with a transparent background:
 
 ```ts
-import etro from 'etro'
-import { ChromaKey } from './ChromaKey'
+import etro from "etro";
+import { ChromaKey } from "./ChromaKey";
 
-const canvas = document.querySelector('canvas')!
+const canvas = document.querySelector("canvas")!;
 const movie = new etro.Movie({
   canvas,
-})
+});
 
 const video = new etro.layer.Video({
-  source: 'video.mp4',
-})
+  source: "video.mp4",
+});
 
 const chromaKey = new ChromaKey({
   color: new etro.Color(0, 1, 0),
   threshold: 0.1,
-})
+});
 
-video.effects.push(chromaKey)
+video.effects.push(chromaKey);
 
-movie.layers.push(video)
+movie.layers.push(video);
 
-window.addEventListener('click', () => {
+window.addEventListener("click", () => {
   if (movie.playing) {
-    movie.pause()
+    movie.pause();
   } else {
-    movie.play()
+    movie.play();
   }
-})
+});
 ```

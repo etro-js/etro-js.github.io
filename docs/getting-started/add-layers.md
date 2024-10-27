@@ -20,7 +20,7 @@ To add a solid color layer to your movie, you can use the `etro.layer.Visual` cl
 const layer = new etro.layer.Visual({
   startTime: 0,
   duration: 5,
-  background: etro.parseColor('blue'),
+  background: etro.parseColor("blue"),
 });
 ```
 

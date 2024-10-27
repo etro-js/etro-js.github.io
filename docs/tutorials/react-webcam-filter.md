@@ -77,15 +77,15 @@ export default function Movie() {
 Use the `Movie` component in `src/App.js`:
 
 ```js
-import React from 'react'
-import Movie from './Movie'
+import React from "react";
+import Movie from "./Movie";
 
 function App() {
   return (
     <div className="App">
       <Movie />
     </div>
-  )
+  );
 }
 ```
 

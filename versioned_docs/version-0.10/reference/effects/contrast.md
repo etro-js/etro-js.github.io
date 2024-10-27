@@ -13,7 +13,7 @@ This effect is GPU-accelerated (see [`etro.effect.Shader`](shader)).
 ```ts
 const effect = new etro.effect.Contrast({
   contrast: 2, // default: 1
-})
+});
 ```
 
 ## Inheritance

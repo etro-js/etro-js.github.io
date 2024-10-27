@@ -1,10 +1,10 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: 'Custom Sources',
+    title: "Custom Sources",
     description: (
       <>
         Etro is shipped with video, audio, image and text sources. You can
@@ -13,7 +13,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Hardware Accelerated Filters',
+    title: "Hardware Accelerated Filters",
     description: (
       <>
         Hardware accelerated GLSL shaders for video effects. Use Etro's built-in
@@ -22,7 +22,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Play, Stream and Record',
+    title: "Play, Stream and Record",
     description: (
       <>
         Play the result to an HTML canvas element, stream it with WebRTC or
@@ -32,9 +32,9 @@ const FeatureList = [
   },
 ];
 
-function Feature({title, description}) {
+function Feature({ title, description }) {
   return (
-    <div className={`${clsx('col col--4')} ${styles.feature}`}>
+    <div className={`${clsx("col col--4")} ${styles.feature}`}>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>

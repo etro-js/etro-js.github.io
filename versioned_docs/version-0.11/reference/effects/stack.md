@@ -12,9 +12,9 @@ This effect is experimental and may be removed in the future.
 
 ```ts
 const effect = new etro.effect.Stack([
-    new etro.effect.Pixelate({ pixelSize: 10 }),
-    new etro.effect.Channels({ factors: { r: 1, g: 0, b: 0 } }),
-])
+  new etro.effect.Pixelate({ pixelSize: 10 }),
+  new etro.effect.Channels({ factors: { r: 1, g: 0, b: 0 } }),
+]);
 ```
 
 ## Inheritance

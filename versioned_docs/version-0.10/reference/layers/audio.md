@@ -8,7 +8,7 @@
 const layer = new etro.layer.Audio({
   startTime: 0,
   duration: 3,
-  source: '<link to audio>',
+  source: "<link to audio>",
   sourceStartTime: 0, // default: 0
   muted: false, // default: false
   volume: 1, // default: 1

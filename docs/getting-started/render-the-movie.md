@@ -12,7 +12,7 @@ To render your movie to the provided `<canvas>` element and the movie's [audio c
 
 ```js
 movie.play().then(() => {
-  console.log('Movie finished playing!');
+  console.log("Movie finished playing!");
 });
 ```
 
@@ -21,16 +21,18 @@ movie.play().then(() => {
 To stream your movie with WebRTC, you can use the `stream()` method:
 
 ```ts
-movie.stream({
-  frameRate: 30,
-  onStart: (stream: MediaStream) => {
-    console.log('Streaming!')
+movie
+  .stream({
+    frameRate: 30,
+    onStart: (stream: MediaStream) => {
+      console.log("Streaming!");
 
-    // Use `stream`
-  },
-}).then(() => {
-  console.log('Stream reached the end or was interrupted')
-})
+      // Use `stream`
+    },
+  })
+  .then(() => {
+    console.log("Stream reached the end or was interrupted");
+  });
 ```
 
 ## Record to Blob
@@ -38,12 +40,14 @@ movie.stream({
 To record your movie to a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob), you can use the `record()` method:
 
 ```js
-movie.record({
-  frameRate: 30,
-}).then(blob => {
-  console.log('Movie finished recording!');
-  console.log('Blob:', blob);
-});
+movie
+  .record({
+    frameRate: 30,
+  })
+  .then((blob) => {
+    console.log("Movie finished recording!");
+    console.log("Blob:", blob);
+  });
 ```
 
 ## Conclusion

@@ -21,14 +21,14 @@ const effect = new etro.effect.Channels({
     g: 0,
     b: 0,
   },
-})
+});
 
 // The only way to update constant values is to manually replace them
 effect.factors = {
   r: 0,
   g: 1,
   b: 1,
-}
+};
 ```
 
 ## Keyframe Animations
@@ -45,7 +45,7 @@ const effect = new etro.effect.Channels({
     g: 0,
     b: 0,
   },
-})
+});
 ```
 
 The above example will animate the red channel from 1 to 0 over the course of one second.
@@ -58,12 +58,12 @@ Functions are JavaScript functions that are called every frame to get the curren
 const effect = new etro.effect.Channels({
   factors: {
     r: (element: etro.EtroObject, time: number) => {
-      return Math.random()
+      return Math.random();
     },
     g: 0,
     b: 0,
   },
-})
+});
 ```
 
 The above example will animate the red channel to a random value every frame.
@@ -74,18 +74,18 @@ To add a dynamic property to your custom layer or effect, use the `Dynamic` gene
 
 ```ts
 class MyEffect extends etro.effect.Base {
-  foo: Dynamic<number>
+  foo: Dynamic<number>;
 
   constructor(foo: Dynamic<number> = 1) {
-    super()
+    super();
 
-    this.foo = foo
+    this.foo = foo;
   }
 
   apply(target: etro.Movie | etro.layer.Base, time: number) {
-    super(target, time)
+    super(target, time);
 
-    const foo = etro.val(this, 'foo', time)
+    const foo = etro.val(this, "foo", time);
     // Do something with the evaluated `foo`
   }
 }

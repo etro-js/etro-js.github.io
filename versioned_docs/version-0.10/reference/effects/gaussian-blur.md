@@ -19,7 +19,7 @@ Currently, only integer values are supported for the radius. PRs welcome!
 ```ts
 const effect = new etro.effect.GaussianBlur({
   radius: 10, // the radius of the blur
-})
+});
 ```
 
 ## Inheritance

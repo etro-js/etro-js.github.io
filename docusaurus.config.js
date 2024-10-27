@@ -34,10 +34,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          lastVersion: 'current',
+          lastVersion: "current",
           versions: {
             current: {
-              label: '0.12',
+              label: "0.12",
             },
           },
           // Please change this to your repo.
@@ -112,7 +112,7 @@ const config = {
               {
                 label: "Tutorials",
                 to: "/docs/category/tutorials",
-              }
+              },
             ],
           },
           {

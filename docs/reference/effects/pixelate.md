@@ -13,7 +13,7 @@ This effect is GPU-accelerated (see [`etro.effect.Shader`](shader)).
 ```ts
 const effect = new etro.effect.Pixelate({
   pixelSize: 10, // the size of a pixel in pixels
-})
+});
 ```
 
 ## Inheritance

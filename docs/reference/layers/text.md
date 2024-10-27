@@ -8,21 +8,22 @@
 const layer = new etro.layer.Text({
   startTime: 0,
   duration: 5,
-  text: 'Hello World',
+  text: "Hello World",
   x: 0, // default: 0
   y: 0, // default: 0
   width: 400, // default: null (full width)
   height: 400, // default: null (full height)
   opacity: 1, // default: 1
-  color: etro.parseColor('white'), // default: new etro.Color(0, 0, 0, 1)
-  font: '10px sans-serif', // default: '10px sans-serif'
+  color: etro.parseColor("white"), // default: new etro.Color(0, 0, 0, 1)
+  font: "10px sans-serif", // default: '10px sans-serif'
   textX: 20, // default: 0
   textY: 20, // default: 0
-  textAlign: 'left', // default: 'left'
-  textBaseline: 'alphabetic', // default: 'alphabetic'
-  textDirection: 'ltr', // default: 'ltr'
-  textStroke: { // default: null (no stroke)
-    color: etro.parseColor('black'),
+  textAlign: "left", // default: 'left'
+  textBaseline: "alphabetic", // default: 'alphabetic'
+  textDirection: "ltr", // default: 'ltr'
+  textStroke: {
+    // default: null (no stroke)
+    color: etro.parseColor("black"),
     position: TextStrokePosition.Outside, // default: TextStrokePosition.Outside
     thickness: 2, // default: 1
   },

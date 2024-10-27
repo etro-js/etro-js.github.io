@@ -23,7 +23,7 @@ const effect = new etro.effect.Channels({
     g: 1, // default: 1
     b: 0.5, // default: 1
   },
-})
+});
 ```
 
 ## Inheritance

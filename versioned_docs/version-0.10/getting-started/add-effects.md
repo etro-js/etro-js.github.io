@@ -19,7 +19,7 @@ To add a blur effect to your movie, you can use the `etro.effect.GaussianBlur` c
 ```js
 const effect = new etro.effect.GaussianBlur({
   radius: 10,
-})
+});
 ```
 
 Then, you can add the effect to your movie before you render it:

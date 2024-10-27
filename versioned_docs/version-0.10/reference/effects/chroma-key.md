@@ -15,7 +15,7 @@ const effect = new etro.effect.ChromaKey({
   target: { r: 0, g: 255, b: 0 }, // default: { r: 0, g: 0, b: 0 }
   threshold: 10, // default: 0
   interpolate: true, // default: false
-})
+});
 ```
 
 ## Inheritance

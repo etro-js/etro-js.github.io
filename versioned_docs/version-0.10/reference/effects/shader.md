@@ -8,7 +8,7 @@ When using this effect, you need to provide a fragment shader source and a list 
 
 ```ts
 class MyEffect extends etro.effect.Shader {
-  foo: Dynamic<number>
+  foo: Dynamic<number>;
 
   constructor(foo: Dynamic<number> = 1) {
     super({
@@ -27,15 +27,15 @@ class MyEffect extends etro.effect.Shader {
         }
       `,
       uniforms: {
-        foo: '1f',
+        foo: "1f",
       },
-    })
+    });
 
-    this.foo = foo
+    this.foo = foo;
   }
 }
 
-const effect = new MyEffect(() => Math.random())
+const effect = new MyEffect(() => Math.random());
 ```
 
 ## Inheritance

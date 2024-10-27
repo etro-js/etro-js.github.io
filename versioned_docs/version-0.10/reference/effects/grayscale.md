@@ -11,7 +11,7 @@ This effect is GPU-accelerated (see [`etro.effect.Shader`](shader)).
 ## Usage
 
 ```ts
-const effect = new etro.effect.Grayscale()
+const effect = new etro.effect.Grayscale();
 ```
 
 ## Inheritance

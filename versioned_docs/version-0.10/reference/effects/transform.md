@@ -10,7 +10,7 @@ const effect = new etro.effect.Transform({
     .translate(100, 100)
     .rotate(Math.PI / 4)
     .scale(2, 2),
-})
+});
 ```
 
 ## Inheritance

@@ -15,7 +15,7 @@ The movie is the main object that you'll use to compose and render your video. I
 To get started, you'll need to import Etro into your project. You can do this by importing the `etro` module:
 
 ```js
-import etro from 'etro';
+import etro from "etro";
 ```
 
 ## Create a Canvas
@@ -23,7 +23,7 @@ import etro from 'etro';
 Next, you'll need to create a canvas element to render your movie to. You can do this by creating a new `HTMLCanvasElement`:
 
 ```js
-const canvas = document.createElement('canvas');
+const canvas = document.createElement("canvas");
 ```
 
 Then, you can add the canvas to the DOM:
@@ -39,7 +39,7 @@ Now, you can create a new `etro.Movie` instance:
 ```js
 const movie = new etro.Movie({
   canvas,
-})
+});
 ```
 
 ## Next

@@ -10,8 +10,7 @@ To get started with the tutorial, you'll need to install Etro:
 npm install etro
 ```
 
-*or*
-
+_or_
 
 ```bash
 yarn add etro

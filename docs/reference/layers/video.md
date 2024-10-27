@@ -8,7 +8,7 @@
 const layer = new etro.layer.Video({
   startTime: 0,
   duration: 5,
-  source: '<link to video>', // also accepts an `HTMLVideoElement`
+  source: "<link to video>", // also accepts an `HTMLVideoElement`
   sourceX: 0, // default: 0
   sourceY: 0, // default: 0
   sourceWidth: 400, // default: null (full width)

@@ -14,7 +14,7 @@ const effect = new etro.effect.EllipticalMask({
   startAngle: 0, // start angle in radians (default: 0)
   endAngle: 2 * Math.PI, // end angle in radians (default: 2 * Math.PI)
   anticlockwise: false, // whether the ellipse is drawn clockwise or anticlockwise (default: false)
-})
+});
 ```
 
 ## Inheritance
