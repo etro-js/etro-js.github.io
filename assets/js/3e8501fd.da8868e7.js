@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunketro_site_2=self.webpackChunketro_site_2||[]).push([[3895],{388:e=>{e.exports=JSON.parse('{"title":"Layers","slug":"/category/layers","permalink":"/docs/0.12/category/layers","navigation":{"previous":{"title":"Movies","permalink":"/docs/0.12/reference/movie"},"next":{"title":"Introduction","permalink":"/docs/0.12/reference/layers/intro"}}}')}}]);
