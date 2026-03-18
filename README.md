@@ -42,7 +42,8 @@ When a new minor version is released:
    the versioned folder for the previous release.
 2. Update the new documentation in [docs/](docs/) to reflect the changes in the
    latest release.
-3. Remove the versioned folder for the fourth previous release.
+3. Remove both the versioned folder and the `versions.json` entry for the fourth previous release.
+4. Update `versions.current` in [docusaurus.config.js](docusaurus.config.js) to the new version.
 
 When documenting an existing feature, please add the documentation to both
 [docs/](docs/) and the relevant versioned folders (e.g.
