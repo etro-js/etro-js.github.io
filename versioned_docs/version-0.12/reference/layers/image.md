@@ -85,7 +85,7 @@ This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
-Defines the x position of the rendered image within the layer’s bounding area. The default value is `0`.
+Defines the x position of the rendered image within the layer’s bounding box. The default value is `0`.
 
 ### `destY`
 
@@ -95,7 +95,7 @@ This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
-Defines the y position of the rendered image within the layer’s bounding area. The default value is `0`.
+Defines the y position of the rendered image within the layer’s bounding box. The default value is `0`.
 
 ### `destWidth`
 
@@ -105,7 +105,7 @@ This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
-Defines the width of the rendered image within the layer’s bounding area. The default value is `null`, which means the image will be rendered to the full width within the bounding area.
+Defines the width of the rendered image within the layer’s bounding box. The default value is `null`, which means the image will be rendered to the full width within the bounding area.
 
 ### `destHeight`
 
@@ -115,6 +115,7 @@ This is a [Dynamic Property](../dynamic-properties).
 
 :::
 
-Defines the height of the rendered image within the layer’s bounding area. The default value is `null`, which means the image will be rendered to the full height within the bounding area.
+Defines the height of the rendered image within the layer’s bounding box. The default value is `null`, which means the image will be rendered to the full height within the bounding area.
+
 
 
