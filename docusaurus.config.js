@@ -123,8 +123,8 @@ const config = {
                 href: "https://discord.gg/myrBsQ8Cht",
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/etrojs",
+                label: "X",
+                href: "https://x.com/etrojs",
               },
             ],
           },
