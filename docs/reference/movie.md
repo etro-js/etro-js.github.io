@@ -153,6 +153,38 @@ Exactly the same as setting the [`currentTime` property](#currenttime):
 movie.seek(0);
 ```
 
+## Serialization
+
+See the [Serialization](serialization) guide for an overview and examples.
+
+### `toJSON()`
+
+Returns a plain, JSON-serializable object representing the movie along with its layers and effects. This is called automatically by `JSON.stringify(movie)`.
+
+**Returns:**
+
+- `object`: The serialized movie.
+
+### `static fromJSON(json, canvas?, actx?)`
+
+Reconstructs a movie from an object produced by [`toJSON()`](#tojson).
+
+**Arguments:**
+
+- `json`: The parsed movie object (not a JSON string).
+- `canvas`: Optional HTML `<canvas>` element to render to. If omitted, a new canvas is created using the serialized dimensions.
+- `actx`: Optional Web Audio rendering context for the movie's audio layers.
+
+**Returns:**
+
+- `Movie`: The reconstructed movie.
+
+**Example:**
+
+```ts
+const movie = etro.Movie.fromJSON(JSON.parse(data), canvas);
+```
+
 ## Properties
 
 ### `layers` (readonly, mutable)

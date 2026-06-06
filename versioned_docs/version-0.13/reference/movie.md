@@ -35,6 +35,7 @@ Draws all the movie's visual layers to the canvas and plays all its audio layers
 
 - `duration`: How long to play for, in seconds. By default, the movie plays to the end.
 - `onStart(): void`: Optional callback function that is called when the movie is fully loaded and starts playing.
+- `onDraw(): void`: Optional callback function that is called every time the movie draws a frame to the canvas.
 
 **Returns:**
 
@@ -47,6 +48,9 @@ await movie.play({
   duration: 3,
   onStart: () => {
     // Playback has started
+  },
+  onDraw: () => {
+    // Frame has been drawn
   },
 });
 // Playback has stopped

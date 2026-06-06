@@ -49,3 +49,7 @@ Called by the movie when the layer should render to its internal canvas.
 ### `stop()`
 
 Called by the movie when the layer is stopped.
+
+### `toJSON()`
+
+Returns a plain, JSON-serializable object representing the layer and its effects. See [Serialization](../serialization).

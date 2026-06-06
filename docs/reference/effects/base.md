@@ -39,3 +39,7 @@ Apply this effect to a target at the given time.
 ### `whenReady()`
 
 Wait until this effect is ready to be applied.
+
+### `toJSON()`
+
+Returns a plain, JSON-serializable object representing the effect. See [Serialization](../serialization).
